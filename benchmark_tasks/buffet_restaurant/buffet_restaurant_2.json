@@ -1,0 +1,65 @@
+{
+  "task_description": "A buffet restaurant with wooden tables; 9m x 11m",
+  "layout_criteria": "Cozy and authentic feel; Each table should have four wooden chairs",
+  "boundary": {
+    "floor_vertices": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        9,
+        0,
+        0
+      ],
+      [
+        9,
+        11,
+        0
+      ],
+      [
+        0,
+        11,
+        0
+      ]
+    ],
+    "wall_height": 1.9527114802252084
+  },
+  "assets_cate": {
+    "beverage_counter": {
+      "count": 1
+    },
+    "buffet_counter": {
+      "count": 2
+    },
+    "dining_table": {
+      "count": 8
+    },
+    "serving_tray_stand": {
+      "count": 2
+    },
+    "umbrella_stand": {
+      "count": 1
+    },
+    "waiting_bench": {
+      "count": 1
+    },
+    "waste_bin": {
+      "count": 2
+    },
+    "wooden_dining_chair": {
+      "count": 32
+    }
+  },
+  "selected_floor_assets": {
+    "buffet_counter": "./3D-FUTURE-model/a314e34c-f2c4-4bd9-955a-d0d896fe276a/raw_model.obj",
+    "serving_tray_stand": "./3D-FUTURE-model/83c665db-6a47-3479-ac5c-b6500ed88b09/raw_model.obj",
+    "dining_table": "./test_asset_dir/c883833b9e5048ffb4adaa9ab74b40da/c883833b9e5048ffb4adaa9ab74b40da.glb",
+    "wooden_dining_chair": "./3D-FUTURE-model/4ae3d689-98c4-468a-a36d-2096e173b8c1/raw_model.obj",
+    "beverage_counter": "./3D-FUTURE-model/d25cd253-c9ff-49c4-b44d-f7887afaa2d6/raw_model.obj",
+    "waste_bin": "./3D-FUTURE-model/843c016f-50c2-4c00-bb13-6aba0f124ae5/raw_model.obj",
+    "waiting_bench": "./3D-FUTURE-model/f2c6d098-6118-4f70-8ca0-755dad039d98/raw_model.obj",
+    "umbrella_stand": "./3D-FUTURE-model/5f9857ec-5cd1-4282-b6f4-72a7707afab3/raw_model.obj"
+  }
+}

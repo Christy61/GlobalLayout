@@ -1,0 +1,39 @@
+You are given:
+- Room type: {room_type}
+- Layout criteria: {layout_criteria}
+- Room description with room size: {room_description}
+- Areas description: {areas}
+- Floor-level object placements (per area): {obj}
+
+Your task:
+1. Propose rugs/carpets to add AFTER layout optimization, based on floor-level object placements and area purpose.
+2. Only include rugs/carpets. Do NOT add other furniture or small items.
+3. If a rug is appropriate, choose its size and center location to cover the main seating/cluster in that area.
+4. Keep reasonable margins from walls and doors unless the area clearly requires wall-to-wall carpet.
+5. If no rug is needed for an area, return an empty `objects` list for that area.
+
+Rules:
+- Only list rugs/carpets in `objects`.
+- Each rug entry must include: name, description (include the word "rug" or "carpet"), dimensions [length, width, height] in meters, amount, and location [x, y] (center on the floor).
+- At most one rug per room/area (do not place two rugs in the same room).
+
+Output following JSON format in ```json ... ``` tags.
+```json
+{
+  "areas": [
+    {
+      "area_name": "<name of the area from the Areas description>",
+      "objects": [
+        {
+          "name": "area_rug",
+          "description": "a low-pile rectangular area rug, neutral tone",
+          "dimensions": [length, width, height],
+          "amount": 1,
+          "location": [x, y]
+        }
+      ],
+      "asset_sets": []
+    }
+  ]
+}
+```

@@ -1,0 +1,57 @@
+{
+  "task_description": "A florist shop for succulents with a large table; 5m x 6m",
+  "layout_criteria": "Unique and educational layout; position the large table centrally and succulents on top of it, surrounded by terrariums and potting stations",
+  "boundary": {
+    "floor_vertices": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        0,
+        0
+      ],
+      [
+        5,
+        6,
+        0
+      ],
+      [
+        0,
+        6,
+        0
+      ]
+    ],
+    "wall_height": 2.7560350107849105
+  },
+  "assets_cate": {
+    "large_display_table": {
+      "count": 1
+    },
+    "plant_display_stand": {
+      "count": 2
+    },
+    "potting_bench": {
+      "count": 2
+    },
+    "storage_cabinet": {
+      "count": 2
+    },
+    "terrarium_display_shelf": {
+      "count": 1
+    },
+    "terrarium_display_stand": {
+      "count": 2
+    }
+  },
+  "selected_floor_assets": {
+    "large_display_table": "./3D-FUTURE-model/24e81447-5e7a-4d34-8c36-562ccac837f7/raw_model.obj",
+    "plant_display_stand": "./3D-FUTURE-model/2321f625-3721-495e-a83b-fa2f9fd06430/raw_model.obj",
+    "terrarium_display_shelf": "./3D-FUTURE-model/18ff314a-9e2c-4e8e-93c7-e71f73180e03/raw_model.obj",
+    "terrarium_display_stand": "./3D-FUTURE-model/9814a26d-3cb1-411b-a11e-95a40986c273/raw_model.obj",
+    "potting_bench": "./3D-FUTURE-model/2023ab55-4098-3849-9879-ea3f9f451223/raw_model.obj",
+    "storage_cabinet": "./3D-FUTURE-model/8f4f873e-6974-4126-8c16-ab7d85204903/raw_model.obj"
+  }
+}

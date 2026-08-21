@@ -1,0 +1,58 @@
+{
+  "task_description": "A compact bedroom with a double bed, wardrobe, desk, and chair; about 3m x 3m",
+  "layout_criteria": "Compact and functional; bed against the right wall, desk against left wall, wardrobe in corner, paintings on wall, minimal walking space",
+  "boundary": {
+    "floor_vertices": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        3,
+        0
+      ],
+      [
+        0,
+        3,
+        0
+      ]
+    ],
+    "wall_height": 2.5
+  },
+  "assets_cate": {
+    "bed": {
+      "count": 1
+    },
+    "nightstand": {
+      "count": 1
+    },
+    "workbench": {
+      "count": 2
+    },
+    "chair": {
+      "count": 2
+    },
+    "bookshelf": {
+      "count": 1
+    },
+    "shelf": {
+      "count": 1
+    }
+  },
+  "assets_list": {
+    "double_bed": "test_asset_dir/6535c843d8e447d887bdf5277d2c5a00/6535c843d8e447d887bdf5277d2c5a00.glb",
+    "nightstand": "test_asset_dir/ac166ce0807345a385b051b06f7960f1/ac166ce0807345a385b051b06f7960f1.glb",
+    "wooden_desk": "test_asset_dir/1903eab9fd4a4933bc46b1c98f12d138/1903eab9fd4a4933bc46b1c98f12d138.glb",
+    "desk_chair": "test_asset_dir/a9a74b63ff4544d7a8632171e0d2032f/a9a74b63ff4544d7a8632171e0d2032f.glb",
+    "small_wardrobe": "test_asset_dir/4d1735ef095044209e9ac12e60aec30a/4d1735ef095044209e9ac12e60aec30a.glb",
+    "bookshelf": "test_asset_dir/a940e2977d3b436f95cbfee62031c2b8/a940e2977d3b436f95cbfee62031c2b8.glb",
+    "potted_plant": "test_asset_dir/bc7f26baef2a45d18dbd9a5d6d2ec565/bc7f26baef2a45d18dbd9a5d6d2ec565.glb"
+  }
+}

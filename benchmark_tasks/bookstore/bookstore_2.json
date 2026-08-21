@@ -1,0 +1,77 @@
+{
+  "task_description": "A rustic bookstore with bookcases and a kids' corner; 8m x 9m",
+  "layout_criteria": "Warm and nostalgic ambiance; the kids book corner should have books scattered around it",
+  "boundary": {
+    "floor_vertices": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        0,
+        0
+      ],
+      [
+        8,
+        9,
+        0
+      ],
+      [
+        0,
+        9,
+        0
+      ]
+    ],
+    "wall_height": 2.276829414389036
+  },
+  "assets_cate": {
+    "armchair": {
+      "count": 2
+    },
+    "bean_bag_chair": {
+      "count": 2
+    },
+    "book_display_table": {
+      "count": 2
+    },
+    "coffee_table": {
+      "count": 1
+    },
+    "low_bookshelf": {
+      "count": 3
+    },
+    "service_counter": {
+      "count": 1
+    },
+    "small_sofa": {
+      "count": 1
+    },
+    "small_wooden_chair": {
+      "count": 2
+    },
+    "step_stool": {
+      "count": 2
+    },
+    "storage_shelf": {
+      "count": 1
+    },
+    "tall_bookshelf": {
+      "count": 8
+    }
+  },
+  "selected_floor_assets": {
+    "low_bookshelf": "./3D-FUTURE-model/7bb1a5a7-32a5-4238-aa64-c5e972e14701/raw_model.obj",
+    "bean_bag_chair": "./3D-FUTURE-model/40fcee9e-520a-4f6d-b8f5-044f5123cc9d/raw_model.obj",
+    "small_wooden_chair": "./3D-FUTURE-model/767fc66f-506b-4472-addc-d9d9aefd9999/raw_model.obj",
+    "tall_bookshelf": "./3D-FUTURE-model/df18ac99-a364-42a7-b66f-427d4fed2ef5/raw_model.obj",
+    "book_display_table": "./3D-FUTURE-model/1a43d007-82cb-48b2-9f84-2f4e1190adc2/raw_model.obj",
+    "step_stool": "./3D-FUTURE-model/767fc66f-506b-4472-addc-d9d9aefd9999/raw_model.obj",
+    "armchair": "./3D-FUTURE-model/8f4810fb-e4cc-419b-85c3-6f1b6e7cd88e/raw_model.obj",
+    "small_sofa": "./3D-FUTURE-model/b3393f71-2044-4dfb-837e-fbea00fab9b5/raw_model.obj",
+    "coffee_table": "./3D-FUTURE-model/7414a5f9-4596-4d60-a90f-3f5f4dac5e3b/raw_model.obj",
+    "service_counter": "./3D-FUTURE-model/1a84ab0a-f432-3693-a887-1d590288a54e/raw_model.obj",
+    "storage_shelf": "./3D-FUTURE-model/d25cd253-c9ff-49c4-b44d-f7887afaa2d6/raw_model.obj"
+  }
+}

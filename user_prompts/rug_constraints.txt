@@ -1,0 +1,33 @@
+You are given:
+- room description: {room_description}
+- layout criteria: {layout_criteria}
+- focused area description: {area}
+- current graph: {current_code}
+- walls: {wall}
+- rug assets in this area: {obj}
+- ImageA / additional renderings: provided if available
+
+Your task: propose spatial constraints for ONLY the rug assets.
+Rugs are matched to a fixed asset model; focus only on placement and orientation.
+Use BOTH ImageA and the render image (if provided) to keep correct semantic/physical relations with existing objects and to avoid collisions.
+Rugs should typically go under beds/tables/sofas; use the images to anchor the rug under the correct furniture.
+Pay attention to rug orientation so the long side covers the intended area; use `align_with` to control direction.
+
+Allowed constraints (STRICT):
+- align_with(area_rug_0, "north_wall")
+- distance(area_rug_0, Point(3.0, 4.0, 0.0), 0.0, 0.05)
+- distance(area_rug_0, "north_wall", 0.5, 1.0)
+
+Rules:
+- Do NOT repeat existing constraints from current_code.
+- Asset src: bare key. Wall dst: quoted string (`"north_wall"`, ...). Position anchor: `Point(x, y, z)`.
+- Use tight distance ranges (e.g., min=0.0, max=0.05) to lock rug position precisely when you can read coordinates from the provided images.
+- Prefer `align_with` to keep rug axis-aligned with the room unless the layout criteria says otherwise.
+- Use floating point numbers.
+
+Your response must be in following format in ```DSL ... ``` tags, don't output wall/obj/current_code again:
+```DSL
+rug_center = Point(3.0, 4.0, 0.0)
+distance(area_rug_0, rug_center, 0.0, 0.05)
+align_with(area_rug_0, "north_wall")
+```

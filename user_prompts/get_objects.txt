@@ -1,0 +1,45 @@
+You are given:
+- Room type: {room_type}
+- Layout criteria: {layout_criteria}
+- Room description with room size: {room_description}
+- Areas description: {areas}
+- Reference asset categories in whole scene(if provided, use it's name and count): {categories}
+- Floor image: floor plan visualization with 0.25m grid for measurements. (includes: A door marked in green and windows marked in blue.)
+
+Your task:
+1. Read layout criteria first — it is the primary constraint. All object choices and counts must comply with it.
+2. Based on the room description, Areas description, and layout criteria, add appropriate floor-standing objects to each area. Be as thorough as possible.
+   Note: Ignore wall-mounted, ceiling-mounted, or tabletop objects. Also ignore floor-mounted items such as rugs/mat and carpet.
+3. For each area: specify the objects to be placed in each area and the quantity of each object.
+4. For each furniture that is required to be placed on the floor (e.g. a sofa, a bed, a cabinet, a desk, etc.):
+   - name: The name of the object (separate different categories of furniture, e.g. dining_table, office_chair, etc.). DO NOT use '/' in name field. 
+   - description: The appearance/style description of the object in 10 words. The description field will be used as the input to CLIP for matching 3D assets.
+     Describing the object itself, must include its name. Make sure the description is concise, category-specific (e.g., 'a round light-finished wooden table, minimalist', etc.)
+   - dimensions: [length, width, height] in meters. Estimated dimensions based on common sense and available space in the room.
+   - amount: The amount of the object. Consider the available space within the room.
+5. Place at least two objects in each area.
+
+Rules:
+- Each entry in objects represents a single type of object.
+- **Ensure there is sufficient space for each object to be placed.**
+- Ignore wall-mounted, ceiling-mounted, or tabletop objects. Also Ignore floor-mounted items such as rugs/mat and carpet.
+- Object `name` must use underscores `_` only (e.g. `conference_chair`, `wall_display`). Do NOT use hyphens `-`.
+
+Output following JSON format in ```json ... ``` tags.
+```json
+{{
+  "areas": [
+    {{
+      "area_name": "<name of the area from the Areas description>",
+      "objects": [
+        {{
+          "name": "furniture_name",
+          "description": "appearance/style description of the furniture",
+          "dimensions": [length, width, height],
+          "amount": number of same furniture (integer)
+        }}
+      ]
+    }}
+  ]
+}}
+```

@@ -1,0 +1,57 @@
+{
+  "task_description": "A small classroom for 4 students with a round table and a whiteboard; 4m x 5m",
+  "layout_criteria": "Intimate and collaborative setting; align the tables with the whiteboard, which is behind the teachers desk",
+  "boundary": {
+    "floor_vertices": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        0
+      ],
+      [
+        4,
+        5,
+        0
+      ],
+      [
+        0,
+        5,
+        0
+      ]
+    ],
+    "wall_height": 2.4107504996647684
+  },
+  "assets_cate": {
+    "round_table": {
+      "count": 1
+    },
+    "storage_cabinet": {
+      "count": 1
+    },
+    "student_chair": {
+      "count": 4
+    },
+    "teacher_chair": {
+      "count": 1
+    },
+    "teacher_desk": {
+      "count": 1
+    },
+    "umbrella_stand": {
+      "count": 1
+    }
+  },
+  "selected_floor_assets": {
+    "round_table": "./3D-FUTURE-model/002740ba-6fca-4258-b631-cf031c2adbdc/raw_model.obj",
+    "student_chair": "./3D-FUTURE-model/6051aea5-051f-4155-9c5a-7a44b280b6a1/raw_model.obj",
+    "teacher_desk": "./3D-FUTURE-model/99fb9d05-ccb2-4e13-ab73-371419ba3f89/raw_model.obj",
+    "teacher_chair": "./3D-FUTURE-model/4ae411dd-cd8f-3b77-acbd-8f4d813d7534/raw_model.obj",
+    "storage_cabinet": "./3D-FUTURE-model/946be8bc-e213-46a4-a76d-77e136b71fd5/raw_model.obj",
+    "umbrella_stand": "./3D-FUTURE-model/c38f4ae4-f2d8-4ad4-b722-f6df0efc9a8c/raw_model.obj"
+  }
+}

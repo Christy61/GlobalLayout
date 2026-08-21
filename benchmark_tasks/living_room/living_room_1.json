@@ -1,0 +1,57 @@
+{
+  "task_description": "A spacious living room with the following layout specifications: large sofa centered in the room, coffee table in front of the sofa, entertainment center on one wall, and a reading nook in one corner. Room size: 6m x 7m",
+  "layout_criteria": "The layout criteria should follow the task description and be spacious, with a large sofa centered in the room, a coffee table in front of the sofa, an entertainment center on one wall, and a reading nook in one corner.",
+  "boundary": {
+    "floor_vertices": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        0,
+        0
+      ],
+      [
+        6,
+        7,
+        0
+      ],
+      [
+        0,
+        7,
+        0
+      ]
+    ],
+    "wall_height": 2.354278111789905
+  },
+  "assets_cate": {
+    "armchair": {
+      "count": 1
+    },
+    "bookshelf": {
+      "count": 2
+    },
+    "coffee_table": {
+      "count": 1
+    },
+    "side_table": {
+      "count": 3
+    },
+    "sofa": {
+      "count": 1
+    },
+    "tv_console": {
+      "count": 1
+    }
+  },
+  "selected_floor_assets": {
+    "sofa": "./3D-FUTURE-model/230489b8-2c6f-45b0-b25c-46dab6160496/raw_model.obj",
+    "coffee_table": "./3D-FUTURE-model/0f409e36-6119-482d-a8f9-558bc5cadce5/raw_model.obj",
+    "side_table": "./3D-FUTURE-model/6483282f-8336-4ea8-b74a-2a64f3b938c0/raw_model.obj",
+    "tv_console": "./3D-FUTURE-model/105e7d2a-0dee-4970-b963-7e2fa121660c/raw_model.obj",
+    "bookshelf": "./3D-FUTURE-model/da34f6fe-6160-4df4-9bd1-8ee0d309a396/raw_model.obj",
+    "armchair": "./3D-FUTURE-model/24624dae-698b-4c70-957c-a67531aac5e4/raw_model.obj"
+  }
+}

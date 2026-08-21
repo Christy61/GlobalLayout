@@ -1,0 +1,105 @@
+You are given:
+- room description: {room_description}
+- layout criteria: {layout_criteria}
+- Current graph (existing constraints):\n {current_code}
+- Walls in the room: {wall}
+- Assets list:\n {obj}
+- Existing assets (already placed):\n {obj_existing}
+- New assets (need constraints):\n {obj_new}
+- Refinement log from the last iteration:\n {log_text}
+- ImageA: floor plan with door, windows and existing assets
+
+Your task: add NEW constraints to fix the issues reported in the log. Output only the new DSL constraints (no explanations).
+
+Constraint Type:
+* position-based: distance, place_align
+* orientation-based: align_with, point_towards
+* both position & orientation-based: against, surround
+
+Task rules:
+
+1. **Conflict handling and semantic refinement**:
+   - Only add constraints for source assets explicitly involved in the refinement log. Do not add, replace, or complete constraints for unrelated assets, even if they appear in the asset list, image, or existing scene.
+   - All [LogicError] entries in the log mean the conflicting edge was already auto-removed. Do NOT re-add those edges unchanged.
+   - Among [LogicError], `occupied_fixed_point` means a `distance(..., Point(...))` anchor plus the new object's footprint (disk r = longer bbox side / 2) overlaps an already-placed existing asset; pick a new free floor location in ImageA (see rule below).
+   - Among [LogicError], `fixed_point_align_collision` means `distance(A, Point(...), ..., <=0.1)` plus `align_with(A, "<wall>")` fully determined A's position and orientation, and that pose collides; the `align_with` edge was removed. Keep the fixed point and try aligning A with a wall perpendicular to the removed wall.
+   - Among [LogicError], `aggregate_wall_conflict` means **wall clustering**: too many objects are `against` the same wall (total bbox width exceeds wall length). One `against` edge was already removed automatically; add `against` on a **different** wall for affected object(s) to spread placement.
+   - [SemanticCommon] entries indicate **missing or inconsistent semantic relations** between objects.
+   - [ConstraintCompleteness] entries indicate missing position/orientation type relation.
+   - Your job is to:
+     1. Review each [SemanticCommon], [ConstraintCompleteness] entry, and any `aggregate_wall_conflict` line. **They all need to be solved!**
+     2. Determine if additional spatial or relational constraints are necessary to maintain scene semantics.
+     3. Add those constraints as direct DSL function calls (e.g. `distance(...)`, `align_with(...)`).
+     4. Add all constraints needed. If use fixed point, must define it in your code.
+
+2. **Follow constraint repair logic**:
+   - If the log says `"A vs B missing/invalid relation ['distance']"`, add a `distance` constraint:
+     ```DSL
+     distance(A, B, min_distance, max_distance)
+     ```
+   - If the log says `"A vs B missing/invalid relation ['place_align']"`, add:
+     ```DSL
+     place_align(A, B, "<direction>")
+     ```
+   - If the log says `"A and B not against same wall"`, add both objects against the same wall constraint:
+     ```DSL
+     against(A, "<wall_name>")
+     against(B, "<wall_name>")
+     ```
+     (You should infer `<wall_name>` from the scene context; use cardinal walls: north_wall, south_wall, east_wall, west_wall)
+   - If the log says `"A should not be against wall"`, add the `align_with` constraint instead:
+     ```DSL
+     align_with(A, "<wall_name>")
+     ```
+   - If the log says `"[LogicError] aggregate_wall_conflict: west_wall exceeds 2.800"` (wall clustering), add `against` on another wall for one or more objects that were against the overcrowded wall:
+     ```DSL
+     against(A, "<another_wall_name>")
+     ```
+     Pick `<another_wall_name>` from scene context (e.g. `"north_wall"`, `"east_wall"`, `"south_wall"`, `"west_wall"`).
+   - If the log says `"direction_conflict: remove place_align: A-B: right"`, consider the correct side for place_align:
+     ```DSL
+     place_align(A, B, "<another_side>")
+     ```
+   - If the log says `"[LogicError] occupied_fixed_point: remove distance(A, fixed_point): ... + r=... overlaps existing B; redefine a free spot in ImageA"`,
+     the fixed point plus the new object's footprint (disk radius = longer bbox side / 2) overlaps an existing asset. Do NOT reuse that point. Look at ImageA for open floor space away from existing assets, define a new `Point(x, y, z)` there, and add:
+     ```DSL
+     anchor_name = Point(<x>, <y>, <z>)
+     distance(A, anchor_name, <min_d>, <max_d>)
+     ```
+   - If the log says `"[LogicError] fixed_point_align_collision: remove align_with(A, \"north_wall\")"` (or another wall),
+     Add a new `align_with` for A using a perpendicular wall instead: for north/south use east/west; for east/west use north/south.
+     ```DSL
+     align_with(A, "<perpendicular_wall_name>")
+     ```
+   - If the log says `"Deplicate_rot_constraints: A-B, remove point_towards/align_with, keep against"` (or `keep surround`),
+     it means A's facing direction is already determined by a higher-priority rotation constraint (`surround` > `against` > `align_with` > `point_towards`).
+     Do not re-add removed orientation constraints for A. If A is in a `surround` src_list, do not add `align_with`/`point_towards` for A.
+     If alignment with B is still needed, use `place_align`:
+     ```DSL
+     place_align(A, B, "<proper_side>")
+     ```
+   - If log line is: `"[ConstraintCompleteness] xxx: missing position-type outgoing constraint"`
+     Add one of: place_align / against / distance. If xxx is the center (dst) of a `surround(...)` group, prefer `distance(xxx, Point(...), 0.0, 0.3)`.
+   - If log line is: `"[ConstraintCompleteness] xxx: missing orientation-type outgoing constraint"`
+     Add one of: align_with / point_towards. If xxx is in a `surround` src_list, do not add orientation constraints (already covered). If xxx is the surround center (dst), use `align_with(xxx, "<wall_name>")` when wall-backed, otherwise skip if position anchor is sufficient.
+
+3. **Important rules**:
+   - Never re-add a constraint that already exists.
+   - Never add conflicting constraints (e.g., two incompatible wall sides).
+   - Do NOT repeat existing constraints from current_code.
+   - Do NOT add `on` or `above` constraints here.
+   - Use bare asset keys and quoted wall keys in DSL (e.g. `distance(sofa_0, table_0, 0.5, 1.0)`, `against(bookcase_0, "east_wall")`).
+   - Fixed points: `Point(x, y, z)` only, with numeric literals (no `obj[...]` / `bbox` subscripts / Python code inside `Point`).
+   - Each object should end up with at least one position constraint and one orientation constraint (directly or via `against`/`surround`).
+   - Prefer small parameter adjustments over inventing new relations/dst.
+   - Use floating point numbers (e.g., 0.0) for numeric parameters.
+   - For directions in `place_align`, use "right", "left", "up", "down".
+   - For chairs near tables: if a chair is missing orientation, add `point_towards(chair, table)` rather than `align_with`.
+   - If you cannot determine a specific fix (e.g., wall side is ambiguous), skip it.
+   - If **no additional constraints are needed**, return an **empty code block** (i.e., just ` ```DSL\n``` `).
+
+4. Output format:
+```DSL
+# define new constraints only
+<constraint_function>(<src_key>, <dst_key>, <*args...>, <**kwargs...>)
+```

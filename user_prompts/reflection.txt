@@ -1,0 +1,9 @@
+You are given:
+1. Objects in current optimized scene with pos and phy: {obj}
+2. A rendered image (top-down).
+
+Your response must be in following format, enclose your answer in ```python ... ``` tags:
+```python
+solver = ConstraintSolver()
+solver.add_constraint(solver.<constraint_function>, <*args...>)
+```

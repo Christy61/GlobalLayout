@@ -1,0 +1,57 @@
+{
+  "task_description": "A dense study room with desks, bookshelf, chairs, and cabinets; about 2.5m x 4m",
+  "layout_criteria": "Compact working area; two desk along the long wall, bookshelf in the corner, chair in front of desk, minimal empty space",
+  "boundary": {
+    "floor_vertices": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        2.5,
+        0,
+        0
+      ],
+      [
+        2.5,
+        3,
+        0
+      ],
+      [
+        0,
+        3,
+        0
+      ]
+    ],
+    "wall_height": 2.5
+  },
+  "assets_cate": {
+    "desk": {
+      "count": 2
+    },
+    "office_chair": {
+      "count": 2
+    },
+    "grandfather_clock": {
+      "count": 1
+    },
+    "menu_stand": {
+      "count": 1
+    },
+    "oven": {
+      "count": 1
+    },
+    "storage_cabinet": {
+      "count": 1
+    }
+  },
+  "assets_list": {
+    "office_desk": "3D-FUTURE-model/7ea1ab97-a7e1-40d2-894b-4ea10e46c26b/raw_model.obj",
+    "ergonomic_office_chair": "test_asset_dir/db03012c3c484314a480b4137da8eb30/db03012c3c484314a480b4137da8eb30.glb",
+    "tall_bookshelf": "3D-FUTURE-model/00ead034-61fb-4c99-abe3-f4180acdb575/raw_model.obj",
+    "storage_cube_shelf": "3D-FUTURE-model/5eea9ea7-f143-47f1-97d9-3fb4a3a98703/raw_model.obj",
+    "low_storage_cabinet": "3D-FUTURE-model/570d83bb-fab9-4d79-b41f-3a0da3bda679/raw_model.obj",
+    "vertical_filing_cabinet": "3D-FUTURE-model/b580b3cc-1c8f-4cf7-b788-1a00dda7bdb1/raw_model.obj"
+  }
+}

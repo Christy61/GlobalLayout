@@ -1,0 +1,65 @@
+{
+  "task_description": "A playful children's room with a twin bed; 4m x 5m",
+  "layout_criteria": "Fun and versatile layout; place the bed in a corner with a night stand nearby",
+  "boundary": {
+    "floor_vertices": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        0
+      ],
+      [
+        4,
+        5,
+        0
+      ],
+      [
+        0,
+        5,
+        0
+      ]
+    ],
+    "wall_height": 1.7239785146579107
+  },
+  "assets_cate": {
+    "child_chair": {
+      "count": 1
+    },
+    "child_desk": {
+      "count": 1
+    },
+    "dresser": {
+      "count": 1
+    },
+    "nightstand": {
+      "count": 1
+    },
+    "play_tent": {
+      "count": 1
+    },
+    "toy_storage_shelf": {
+      "count": 1
+    },
+    "twin_bed": {
+      "count": 1
+    },
+    "wardrobe": {
+      "count": 1
+    }
+  },
+  "selected_floor_assets": {
+    "twin_bed": "./3D-FUTURE-model/e5a42f97-dee7-4289-9ad4-96f463a8b4c2/raw_model.obj",
+    "nightstand": "./3D-FUTURE-model/b4e2237c-5496-44cc-b20a-7eb2836d779c/raw_model.obj",
+    "toy_storage_shelf": "./3D-FUTURE-model/32db831d-d8ae-45dd-aecb-061f532a8d49/raw_model.obj",
+    "play_tent": "./3D-FUTURE-model/c9a6c043-b4ed-4589-b46a-e2f6cbe1e260/raw_model.obj",
+    "child_desk": "./3D-FUTURE-model/1178ea81-13a5-4ac7-a315-bd66c4874668/raw_model.obj",
+    "child_chair": "./3D-FUTURE-model/ef292341-44b2-4ff5-989f-1cf78ffaf7f0/raw_model.obj",
+    "wardrobe": "./3D-FUTURE-model/89b7c9e6-dc40-4e23-b64b-0c9876967430/raw_model.obj",
+    "dresser": "./3D-FUTURE-model/bfb894c1-9458-4a21-8105-1102251c809b/raw_model.obj"
+  }
+}

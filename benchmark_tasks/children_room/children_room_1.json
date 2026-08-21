@@ -1,0 +1,61 @@
+{
+  "task_description": "A peaceful children's room with a cradle; 3.5m x 4m",
+  "layout_criteria": "Serene and nurturing atmosphere; position the cradle near an open area of the room for easy access, with a rocking chair placed at a 45-degree angle at an opposite corner facing the cradle",
+  "boundary": {
+    "floor_vertices": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        3.5,
+        0,
+        0
+      ],
+      [
+        3.5,
+        4,
+        0
+      ],
+      [
+        0,
+        4,
+        0
+      ]
+    ],
+    "wall_height": 2.5352319202506166
+  },
+  "assets_cate": {
+    "bookshelf": {
+      "count": 1
+    },
+    "cradle": {
+      "count": 1
+    },
+    "floor_cushion": {
+      "count": 2
+    },
+    "low_dresser": {
+      "count": 1
+    },
+    "rocking_chair": {
+      "count": 1
+    },
+    "side_table": {
+      "count": 2
+    },
+    "toy_chest": {
+      "count": 1
+    }
+  },
+  "selected_floor_assets": {
+    "cradle": "./3D-FUTURE-model/699d9b41-57b2-4dee-ac3d-66bc634d2c4a/raw_model.obj",
+    "side_table": "./3D-FUTURE-model/267d64bb-aa19-48c9-918e-e88b8dc8d2d5/raw_model.obj",
+    "rocking_chair": "./3D-FUTURE-model/1b1c2e2b-8d32-4768-8af3-0e7b82a148b7/raw_model.obj",
+    "low_dresser": "./3D-FUTURE-model/f9cafe53-a055-4059-90b2-892a14e3b750/raw_model.obj",
+    "toy_chest": "./3D-FUTURE-model/761dea3b-2580-4828-b3b7-51636b1d1c4a/raw_model.obj",
+    "floor_cushion": "./3D-FUTURE-model/68d3b932-5359-43c2-8549-8baf59adc84b/raw_model.obj",
+    "bookshelf": "./3D-FUTURE-model/5eea9ea7-f143-47f1-97d9-3fb4a3a98703/raw_model.obj"
+  }
+}

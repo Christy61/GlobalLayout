@@ -1,0 +1,42 @@
+You are given:
+- room description: {task_description}
+- The exact floorplan vertices in counterclockwise order: {floor_v} (meters)
+  - Coordinates start from (0.00, 0.00) at the bottom-left corner in top-down view
+  - +X is to the right, +Y is upward
+- door size: [width, height]: [0.8, 2.0]
+- window size: [width, height]: [1.6, 1.2]
+
+Your task:
+1. Place the door on one of the room's boundary walls, considering the room type.
+   - Do not default to a corner placement; choose a location that best supports the room's function and circulation
+   - Ensure the door's coordinates lie exactly on one of the wall segments
+2. Optionally place zero or more windows if appropriate for the room type.
+3. Follow these rules:
+   - Snap all coordinates to the nearest 0.25 m grid.
+   - The door and windows center must be at least 0.5 m away from room vertices.
+   - "wall_id" is the index of the wall in counterclockwise order:
+       wall 0 = vertex 0 → vertex 1,
+       wall 1 = vertex 1 → vertex 2, etc.
+
+Note: The "center" refers to the geometric center point of the door/window along the wall segment. 
+   Assume negligible thickness (0m), so these points lie exactly on the wall line. 
+For doors with "hinge: right": the door's right edge must be at least 0.8m from the left wall
+For doors with "hinge: left": the door's left edge must be at least 0.8m from the right wall
+
+Respond in JSON format in ```json ... ``` tags:
+```json
+{{
+  "door_location": {{
+    "wall_id": <int>,
+    "center": [x, y],
+    "hinge": "left"|"right",
+    "swing": "inward"
+  }},
+  "window_locations": [
+    {{
+      "wall_id": <int>,
+      "center": [x, y],
+    }}
+  ]
+}}
+```

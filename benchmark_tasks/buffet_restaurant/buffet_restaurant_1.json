@@ -1,0 +1,65 @@
+{
+  "task_description": "A fancy buffet restaurant with relatively few tables and chairs; 7 x 9m",
+  "layout_criteria": "Sophisticated atmosphere; each table should only have two chairs on opposite sides of one another",
+  "boundary": {
+    "floor_vertices": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        0,
+        0
+      ],
+      [
+        7,
+        9,
+        0
+      ],
+      [
+        0,
+        9,
+        0
+      ]
+    ],
+    "wall_height": 1.9941034001587719
+  },
+  "assets_cate": {
+    "dessert_counter": {
+      "count": 1
+    },
+    "dining_chair": {
+      "count": 10
+    },
+    "dining_table_2_seater": {
+      "count": 5
+    },
+    "display_pedestal": {
+      "count": 1
+    },
+    "plant_large": {
+      "count": 2
+    },
+    "planter_box": {
+      "count": 1
+    },
+    "serving_stand": {
+      "count": 2
+    },
+    "side_buffer_table": {
+      "count": 2
+    }
+  },
+  "selected_floor_assets": {
+    "dining_table_2_seater": "./3D-FUTURE-model/c628c0ee-a5ae-4706-8802-90368fb49d3f/raw_model.obj",
+    "dining_chair": "./3D-FUTURE-model/17d76d92-e922-4c37-b580-36ae38a7148d/raw_model.obj",
+    "side_buffer_table": "./3D-FUTURE-model/cdb53cce-9109-4b96-94f9-155fdafc489d/raw_model.obj",
+    "serving_stand": "./3D-FUTURE-model/8690861d-7f73-4c87-bd20-19cf8da9c89e/raw_model.obj",
+    "dessert_counter": "./3D-FUTURE-model/62117100-7bc5-42c8-b8ce-626d46400970/raw_model.obj",
+    "display_pedestal": "./3D-FUTURE-model/03370373-5e38-43f0-8133-07fecdd6159d/raw_model.obj",
+    "plant_large": "./3D-FUTURE-model/52861f27-bf9d-486d-8326-34e7c689f45a/raw_model.obj",
+    "planter_box": "./3D-FUTURE-model/31c78caa-3c39-4449-a382-7fc65c640120/raw_model.obj"
+  }
+}

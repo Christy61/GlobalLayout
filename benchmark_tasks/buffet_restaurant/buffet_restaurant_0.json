@@ -1,0 +1,65 @@
+{
+  "task_description": "A small buffet restaurant with a dessert station; 6m x 8m",
+  "layout_criteria": "Compact yet functional layout; buffet tables arrangement should be symmetrically arranged ",
+  "boundary": {
+    "floor_vertices": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        0,
+        0
+      ],
+      [
+        6,
+        8,
+        0
+      ],
+      [
+        0,
+        8,
+        0
+      ]
+    ],
+    "wall_height": 2.103350512088398
+  },
+  "assets_cate": {
+    "decorative_floor_vase": {
+      "count": 2
+    },
+    "dessert_counter": {
+      "count": 1
+    },
+    "dining_chair": {
+      "count": 16
+    },
+    "dining_table_4_seater": {
+      "count": 4
+    },
+    "long_buffet_table": {
+      "count": 2
+    },
+    "plant_large": {
+      "count": 2
+    },
+    "serving_tray_stand": {
+      "count": 2
+    },
+    "side_serving_cart": {
+      "count": 1
+    }
+  },
+  "selected_floor_assets": {
+    "long_buffet_table": "./3D-FUTURE-model/21855a19-6207-4221-80dc-7471e7378317/raw_model.obj",
+    "serving_tray_stand": "./3D-FUTURE-model/3a50fffe-7602-4151-b476-bb9e163175ed/raw_model.obj",
+    "dining_table_4_seater": "./3D-FUTURE-model/01244633-0eab-43c7-af22-aab45596262c/raw_model.obj",
+    "dining_chair": "./3D-FUTURE-model/3c2e5751-1e64-41a7-8625-991879d862dd/raw_model.obj",
+    "dessert_counter": "./3D-FUTURE-model/1c9e0c4d-a792-42e2-a7f2-4127666cc148/raw_model.obj",
+    "side_serving_cart": "./3D-FUTURE-model/0f36cc9e-e817-4b9c-94cb-9b16264fd6d2/raw_model.obj",
+    "plant_large": "./3D-FUTURE-model/1569a7de-13ff-48d1-8650-365167a98a4d/raw_model.obj",
+    "decorative_floor_vase": "./3D-FUTURE-model/bf966a4c-5f78-412e-969c-967addee8f3e/raw_model.obj"
+  }
+}

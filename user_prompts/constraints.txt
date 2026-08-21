@@ -1,0 +1,57 @@
+You are given:
+- room description: {room_description}
+- layout criteria: {layout_criteria}
+- focused area description: {area}
+- current constraints: {current_code}
+- ImageA: floor plan with door and windows and coordinate grid for measurement reference.
+- Asset image: when 'phy' is 0.0, facing +x axis
+
+Available constraints:
+* position: distance, place_align
+* orientation: align_with, point_towards
+* both position & orientation: against, surround
+Note: Each constraint specifies how the first object (src) should be updated relative to a reference (dst), except in `surround`, where all assets in `src_list` are updated and `dst` is the center.
+Specify constraints based on the layout criteria. These constraints will be used to ensure that the layout semantics are maintained.
+Define at least one position constraint and one orientation constraint for each object to ensure exact placement (members of `surround` src_list satisfy both via that single constraint).
+
+Here are the dos and don'ts:
+* DO NOT re-initialize assets or add assets. Refer to each asset by its key (e.g. `sofa_0`, `dining_table_0`).
+* When giving the value of the parameter, use floating format (e.g., 0.0). DO NOT use empty list in `surround` and None in any constraints.
+* When define constraints with a fixed point or a wall, look floor plan image in detail. Take slight to reference from `Focused area`, but ensure semantic accuracy above all.
+* Look at ImageA to avoid overlapping with existing objects.
+* The asset orientation refers to its front-facing direction in Asset images.
+* If you want to specify a constraint between an asset and an absolute coordinate (e.g., the center of the room or an area), define a fixed point as `Point(x, y, z)` and reuse the same variable name in subsequent constraints. Example:
+  ```DSL
+  central_point = Point(4.0, 5.5, 0.0)
+  distance(dining_table_0, central_point, 0.0, 0.3)
+  ```
+  If multiple assets need to reference the same point, keep a positive max_distance (>0.0).
+* **Fixed-point DSL rules:** use **numeric literals only** inside `Point(x, y, z)`. Estimate coordinates, then write the computed number directly.
+  - DO NOT use `obj[...]`, `obj['key']['bbox']`, subscripts, or Python expressions in `Point(...)`.
+  - Allowed: `Point(2.0, 4.25, 0.0)` or simple literals like `Point(2.0 - 1.21, 4.1, 0.0)`.
+    You can then use the distance constraint with a fixed point to guide the placement of major objects(like dining table) and avoid collisions or excessive clustering.
+* Anchors (large furniture, core or central objects in the area): Each anchor must have at least one wall relation (`against` / `align_with`) or a fixed-point relation (`distance` to a `Point(...)`).
+  Default `against` for beds, wardrobes/cabinets, and other conventional wall-backed pieces. Use fixed point + `distance` when the anchor is surrounded by other objects, must sit in the middle of the floor plan, or the scenario is special (e.g. restaurant dining table, conference table)—i.e. wall-backed placement would break the intended semantics.
+* Wall references use a quoted wall key string, e.g. `align_with(dining_table_0, "north_wall")`, `against(bed_0, "west_wall")`.
+* Direction of `place_align` is defined in the global coordinate system in top-view (refer to ImageA). For example, if a sofa is facing right (+x), and you want to place a table in front of the sofa, you should use `place_align(table_0, sofa_0, "right")`, because the sofa's 'front' corresponds to the global +x axis.
+* The wall's 'phy' is the normal direction of the wall in top-view. For example, align/against left wall means facing right(+x), align/against back wall means facing down(-y).
+* Define constraints only between adjacent assets and for semantically strong relationships, avoiding unnecessary constraints between distant or unrelated assets.
+* When there are conflicting constraints between two assets, the first constraint you specify will be used. Thus, specify important constraints first.
+* Most of large furnitures should be `against` a wall.
+
+Your response must be in following format in ```DSL ... ``` tags, don't output the given program again:
+```DSL
+# all wall in the scene, use "<key>" to access a wall. The wall's 'phy' aligns with the direction of its face.
+# bbox: [width, length, height], which is bbox when facing +x axis (0 degree), consider bbox but can not refer them as dict value.
+wall = {wall}
+
+# assets need to be placed in the area, use "<key>" to access an asset.
+obj = {obj}
+# DO NOT output wall and obj and current constraints!
+
+# define fixed points (if needed)
+# central_point = Point(x, y, z)
+
+# define constraints
+<constraint_function>(<src_key>, <dst_key>, <*args...>, <**kwargs...>)
+```

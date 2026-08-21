@@ -1,0 +1,57 @@
+{
+  "task_description": "An old-fashioned deli with racks of fresh bread; 4m x 6m",
+  "layout_criteria": "Nostalgic and aromatic environment; position bread racks near the front where the checkout counter is located",
+  "boundary": {
+    "floor_vertices": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        0
+      ],
+      [
+        4,
+        6,
+        0
+      ],
+      [
+        0,
+        6,
+        0
+      ]
+    ],
+    "wall_height": 1.9313531858919646
+  },
+  "assets_cate": {
+    "bread_rack": {
+      "count": 2
+    },
+    "checkout_counter": {
+      "count": 1
+    },
+    "deli_counter": {
+      "count": 1
+    },
+    "refrigerated_display_case": {
+      "count": 1
+    },
+    "round_table": {
+      "count": 2
+    },
+    "wooden_chair": {
+      "count": 4
+    }
+  },
+  "selected_floor_assets": {
+    "bread_rack": "./3D-FUTURE-model/d4416e24-4a48-4c06-aa46-bac5af642ad6/raw_model.obj",
+    "checkout_counter": "./3D-FUTURE-model/698c968f-43b4-3538-81ab-db75e337dc39/raw_model.obj",
+    "deli_counter": "./3D-FUTURE-model/1c9e0c4d-a792-42e2-a7f2-4127666cc148/raw_model.obj",
+    "refrigerated_display_case": "./3D-FUTURE-model/e8a3be18-39ec-48bd-8a3f-1612cdadb851/raw_model.obj",
+    "round_table": "./3D-FUTURE-model/c95ec7f0-08ca-4a71-998f-b2fdf0dc329b/raw_model.obj",
+    "wooden_chair": "./3D-FUTURE-model/3a431666-c294-41c8-85ca-2247a19e3671/raw_model.obj"
+  }
+}

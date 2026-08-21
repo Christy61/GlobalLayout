@@ -1,0 +1,61 @@
+{
+  "task_description": "A floral shop dominated by an arrangement of orchids near a wooden counter; 3m x 5m",
+  "layout_criteria": "Elegant and customer-focused design; the counter should be placed at a location for easy customer interaction",
+  "boundary": {
+    "floor_vertices": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        5,
+        0
+      ],
+      [
+        0,
+        5,
+        0
+      ]
+    ],
+    "wall_height": 2.834355947204294
+  },
+  "assets_cate": {
+    "flower_bucket_stand": {
+      "count": 2
+    },
+    "freestanding_shelving_unit": {
+      "count": 2
+    },
+    "impulse_buy_display_stand": {
+      "count": 1
+    },
+    "orchid_display_table": {
+      "count": 1
+    },
+    "staff_stool": {
+      "count": 1
+    },
+    "tiered_orchid_display_stand": {
+      "count": 1
+    },
+    "wooden_counter": {
+      "count": 1
+    }
+  },
+  "selected_floor_assets": {
+    "wooden_counter": "./3D-FUTURE-model/c1a7aecd-a5a1-44a5-9d00-340f5b0d235e/raw_model.obj",
+    "staff_stool": "./3D-FUTURE-model/267d64bb-aa19-48c9-918e-e88b8dc8d2d5/raw_model.obj",
+    "impulse_buy_display_stand": "./3D-FUTURE-model/ce63ff93-6765-41fd-86e0-60e54d704aed/raw_model.obj",
+    "tiered_orchid_display_stand": "./3D-FUTURE-model/35e16327-efbe-4dde-93f8-42c88b501659/raw_model.obj",
+    "orchid_display_table": "./3D-FUTURE-model/e47ba442-11e4-4016-b9cf-6fc807946d0e/raw_model.obj",
+    "freestanding_shelving_unit": "./3D-FUTURE-model/f2dac8d9-2642-4c9a-a852-edddd07d8514/raw_model.obj",
+    "flower_bucket_stand": "./3D-FUTURE-model/d974808f-866f-4ae1-94c9-2ee7b8c5cd1e/raw_model.obj"
+  }
+}

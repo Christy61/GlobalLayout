@@ -1,0 +1,49 @@
+{
+  "task_description": "A cozy computer room with a bean bag chair, laptop table, and bookshelf for a singular person; 3m x 4m",
+  "layout_criteria": "Relaxed and versatile setup; position the laptop table near a wall on top of a work desk, the bean bag chair and the bookshelf should be near eachother",
+  "boundary": {
+    "floor_vertices": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        4,
+        0
+      ],
+      [
+        0,
+        4,
+        0
+      ]
+    ],
+    "wall_height": 2.6085135359697516
+  },
+  "assets_cate": {
+    "bean_bag_chair": {
+      "count": 1
+    },
+    "bookshelf": {
+      "count": 1
+    },
+    "office_chair": {
+      "count": 1
+    },
+    "work_desk": {
+      "count": 1
+    }
+  },
+  "selected_floor_assets": {
+    "work_desk": "./3D-FUTURE-model/630bddfc-cf2d-4a0f-8921-ad566ccca677/raw_model.obj",
+    "office_chair": "./test_asset_dir/db03012c3c484314a480b4137da8eb30/db03012c3c484314a480b4137da8eb30.glb",
+    "bean_bag_chair": "./3D-FUTURE-model/5591d9e6-ae6f-445d-ae57-1dccb4a4ee5e/raw_model.obj",
+    "bookshelf": "./3D-FUTURE-model/00ead034-61fb-4c99-abe3-f4180acdb575/raw_model.obj"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "task_description": "A compact deli with a charcuterie display; 5m x 3m",
+  "layout_criteria": "Focused and specialized space; feature the charcuterie display as the centerpieces",
+  "boundary": {
+    "floor_vertices": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        0,
+        0
+      ],
+      [
+        5,
+        3,
+        0
+      ],
+      [
+        0,
+        3,
+        0
+      ]
+    ],
+    "wall_height": 1.4983979426203078
+  },
+  "assets_cate": {
+    "bar_height_counter": {
+      "count": 1
+    },
+    "bar_stool": {
+      "count": 3
+    },
+    "charcuterie_display_case": {
+      "count": 1
+    },
+    "display_pedestal": {
+      "count": 1
+    },
+    "freestanding_sign_holder": {
+      "count": 1
+    },
+    "prep_counter": {
+      "count": 1
+    },
+    "queue_stanchion": {
+      "count": 2
+    },
+    "service_counter": {
+      "count": 1
+    },
+    "staff_stool": {
+      "count": 1
+    },
+    "storage_shelving_unit": {
+      "count": 1
+    }
+  },
+  "selected_floor_assets": {
+    "charcuterie_display_case": "./3D-FUTURE-model/2e731c41-1add-4d54-aca6-74d3d1524e45/raw_model.obj",
+    "display_pedestal": "./3D-FUTURE-model/02bb6c69-603c-4d60-ab2d-1c4f129acca2/raw_model.obj",
+    "queue_stanchion": "./3D-FUTURE-model/637499d1-4a2e-4274-9acf-b8d08622cf1c/raw_model.obj",
+    "freestanding_sign_holder": "./3D-FUTURE-model/44bf78f6-8c83-42a4-a646-2c7c7a66091a/raw_model.obj",
+    "service_counter": "./3D-FUTURE-model/11e193ec-f8a7-356a-b077-9a46bd80289c/raw_model.obj",
+    "staff_stool": "./3D-FUTURE-model/68538729-95b8-31e9-8888-9179cd2a87ef/raw_model.obj",
+    "bar_height_counter": "./3D-FUTURE-model/795de70f-08ac-4a36-8d75-c2d8b064ba50/raw_model.obj",
+    "bar_stool": "./3D-FUTURE-model/5c743f3d-6647-4f2b-9ecf-561b119cc104/raw_model.obj",
+    "storage_shelving_unit": "./3D-FUTURE-model/b13d56cd-19e9-46cd-abe4-0675ef6d9396/raw_model.obj",
+    "prep_counter": "./3D-FUTURE-model/dc93f346-4ca0-4f35-b362-0af393421fb1/raw_model.obj"
+  }
+}

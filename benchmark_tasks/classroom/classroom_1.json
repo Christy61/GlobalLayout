@@ -1,0 +1,65 @@
+{
+  "task_description": "A high school classroom with lab tables; 8m x 9m",
+  "layout_criteria": "Functional science learning space; position lab tables in pairs with ample space between them, the student tables and material tables should be in differing spaces",
+  "boundary": {
+    "floor_vertices": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        0,
+        0
+      ],
+      [
+        8,
+        9,
+        0
+      ],
+      [
+        0,
+        9,
+        0
+      ]
+    ],
+    "wall_height": 1.802064657832211
+  },
+  "assets_cate": {
+    "demonstration_table": {
+      "count": 1
+    },
+    "emergency_safety_station": {
+      "count": 1
+    },
+    "fire_extinguisher_stand": {
+      "count": 1
+    },
+    "lab_stool": {
+      "count": 16
+    },
+    "lab_table": {
+      "count": 8
+    },
+    "prep_table": {
+      "count": 1
+    },
+    "storage_cabinet": {
+      "count": 2
+    },
+    "teacher_chair": {
+      "count": 1
+    }
+  },
+  "selected_floor_assets": {
+    "lab_table": "./3D-FUTURE-model/a67b7a75-0781-4466-a687-ce7c36fdac60/raw_model.obj",
+    "lab_stool": "./test_asset_dir/8049918476e1432d8e773ae5a24a3026/8049918476e1432d8e773ae5a24a3026.glb",
+    "demonstration_table": "./test_asset_dir/1903eab9fd4a4933bc46b1c98f12d138/1903eab9fd4a4933bc46b1c98f12d138.glb",
+    "teacher_chair": "./3D-FUTURE-model/4ae411dd-cd8f-3b77-acbd-8f4d813d7534/raw_model.obj",
+    "storage_cabinet": "./3D-FUTURE-model/dbb8f539-5052-455a-a4ec-0a5c76ce3497/raw_model.obj",
+    "prep_table": "./test_asset_dir/354c66da86a54b9fb8ff9242dc397708/354c66da86a54b9fb8ff9242dc397708.glb",
+    "emergency_safety_station": "./3D-FUTURE-model/dbb8f539-5052-455a-a4ec-0a5c76ce3497/raw_model.obj",
+    "fire_extinguisher_stand": "./test_asset_dir/87cb0380b5c64e729474ad3a7c60ee8b/87cb0380b5c64e729474ad3a7c60ee8b.glb"
+  }
+}

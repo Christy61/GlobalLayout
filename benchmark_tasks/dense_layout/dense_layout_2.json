@@ -1,0 +1,74 @@
+{
+  "task_description": "A compact bedroom with multiple furniture items, 4m x 4m",
+  "layout_criteria": "A cozy bedroom with three functional zones: sleeping, working, and relaxing. Fully furnished and arranged for comfort and usability.",
+  "boundary": {
+    "floor_vertices": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        0
+      ],
+      [
+        4,
+        4,
+        0
+      ],
+      [
+        0,
+        4,
+        0
+      ]
+    ],
+    "wall_height": 2.8
+  },
+  "assets_cate": {
+    "bed": {
+      "count": 1
+    },
+    "bedside_table": {
+      "count": 1
+    },
+    "table": {
+      "count": 1
+    },
+    "table0": {
+      "count": 1
+    },
+    "chair": {
+      "count": 1
+    },
+    "armchair": {
+      "count": 1
+    },
+    "coffee_table": {
+      "count": 1
+    },
+    "side_table": {
+      "count": 1
+    },
+    "floor_lamp": {
+      "count": 1
+    },
+    "shower_enclosure": {
+      "count": 1
+    }
+  },
+  "assets_list": {
+    "single_bed": "3D-FUTURE-model/734b2469-ff27-4288-8bde-f9561bae1370/raw_model.obj",
+    "bedside_table": "3D-FUTURE-model/36a4de8e-bdc1-410d-99d3-5acb5dacc5eb/raw_model.obj",
+    "wardrobe": "3D-FUTURE-model/31c3c91c-7fce-4784-bbf6-15eb8279bfc6/raw_model.obj",
+    "storage_ottoman": "3D-FUTURE-model/ee8e9ae9-a5bc-4125-89b9-4bc0511c95b1/raw_model.obj",
+    "desk": "3D-FUTURE-model/fc60da6f-4c81-4fd3-b1b8-ef0044fc3c5c/raw_model.obj",
+    "desk_chair": "test_asset_dir/db03012c3c484314a480b4137da8eb30/db03012c3c484314a480b4137da8eb30.glb",
+    "loveseat_sofa": "3D-FUTURE-model/9d57ed1c-ba2a-4ec3-a74b-495766e787fd/raw_model.obj",
+    "floor_lamp": "3D-FUTURE-model/93adf1b3-3560-4f2c-af05-d2355fd1e536/raw_model.obj",
+    "coffee_table": "3D-FUTURE-model/2057d07d-11a6-4873-9199-8eca3f6fcb8c/raw_model.obj",
+    "tv_stand": "3D-FUTURE-model/b6a65272-a2fc-494e-9bda-f454c83b96c9/raw_model.obj",
+    "potted_plant": "3D-FUTURE-model/93b8c80c-019e-4341-a8d1-4accf589a2de/raw_model.obj"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "task_description": "A modern dining room with a dining table and chairs; 3 x 5m",
+  "layout_criteria": "Sleek and airy design; center the chairs and table, each chair should be equidistant from the table",
+  "boundary": {
+    "floor_vertices": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        0,
+        0
+      ],
+      [
+        5,
+        3,
+        0
+      ],
+      [
+        0,
+        3,
+        0
+      ]
+    ],
+    "wall_height": 2.2319747536239736
+  },
+  "assets_cate": {
+    "dining_chair": {
+      "count": 6
+    },
+    "dining_table": {
+      "count": 1
+    },
+    "narrow_console_table": {
+      "count": 1
+    },
+    "tall_planter": {
+      "count": 2
+    }
+  },
+  "selected_floor_assets": {
+    "dining_table": "./3D-FUTURE-model/7fd33157-255f-4dc0-afa9-4e1c2b001126/raw_model.obj",
+    "dining_chair": "./3D-FUTURE-model/319df900-0d4c-467d-aabb-2a2c082235c4/raw_model.obj",
+    "tall_planter": "./3D-FUTURE-model/a0df035b-7779-4211-9f38-e1326c3aec5b/raw_model.obj",
+    "narrow_console_table": "./3D-FUTURE-model/210e365e-f949-4075-a7c4-4a7cc43178bc/raw_model.obj"
+  }
+}

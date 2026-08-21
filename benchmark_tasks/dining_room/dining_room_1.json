@@ -1,0 +1,49 @@
+{
+  "task_description": "A cozy dining room with a circular table and two chairs; 3.5m x 4m",
+  "layout_criteria": "Intimate and space-efficient layout; set the circular table in one corner with two chairs",
+  "boundary": {
+    "floor_vertices": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        3.5,
+        0,
+        0
+      ],
+      [
+        3.5,
+        4,
+        0
+      ],
+      [
+        0,
+        4,
+        0
+      ]
+    ],
+    "wall_height": 2.0443874993818243
+  },
+  "assets_cate": {
+    "dining_chair": {
+      "count": 2
+    },
+    "dining_table": {
+      "count": 1
+    },
+    "narrow_console_table": {
+      "count": 1
+    },
+    "umbrella_stand": {
+      "count": 1
+    }
+  },
+  "selected_floor_assets": {
+    "dining_table": "./3D-FUTURE-model/6527c16d-6089-4c3b-8642-a01e9dee93fa/raw_model.obj",
+    "dining_chair": "./3D-FUTURE-model/f9bc5ca8-180a-4a0c-8cf1-e85b20864fa3/raw_model.obj",
+    "narrow_console_table": "./3D-FUTURE-model/c038d3cf-722c-45d9-88db-45ede34c5cb9/raw_model.obj",
+    "umbrella_stand": "./3D-FUTURE-model/c38f4ae4-f2d8-4ad4-b722-f6df0efc9a8c/raw_model.obj"
+  }
+}

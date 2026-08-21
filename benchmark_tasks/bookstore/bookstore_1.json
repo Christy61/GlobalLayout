@@ -1,0 +1,57 @@
+{
+  "task_description": "A spacious bookstore with a reading area and bookcases; 10m x 7m",
+  "layout_criteria": "Airy and inviting space; create a central reading area surrounded by the bookcases",
+  "boundary": {
+    "floor_vertices": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        10,
+        0,
+        0
+      ],
+      [
+        10,
+        7,
+        0
+      ],
+      [
+        0,
+        7,
+        0
+      ]
+    ],
+    "wall_height": 1.6257099772359498
+  },
+  "assets_cate": {
+    "armchair": {
+      "count": 6
+    },
+    "bench": {
+      "count": 4
+    },
+    "floor_lamp": {
+      "count": 2
+    },
+    "large_round_table": {
+      "count": 1
+    },
+    "potted_plant": {
+      "count": 6
+    },
+    "wall_bookcase": {
+      "count": 10
+    }
+  },
+  "selected_floor_assets": {
+    "large_round_table": "./3D-FUTURE-model/4a435ea6-6a96-4a45-8000-5602f0732e41/raw_model.obj",
+    "armchair": "./3D-FUTURE-model/0f83ce4d-dec5-4a5e-8b6b-fc00455ab9cd/raw_model.obj",
+    "floor_lamp": "./3D-FUTURE-model/a95f3e4f-ce35-458e-9b81-d4a8997daef3/raw_model.obj",
+    "potted_plant": "./3D-FUTURE-model/f56dd8b9-4faf-4a23-85c6-30098f85bee8/raw_model.obj",
+    "wall_bookcase": "./3D-FUTURE-model/04ec5533-0048-46c0-b52d-2950d9abf323/raw_model.obj",
+    "bench": "./3D-FUTURE-model/3c8da5f2-c380-40d1-90e8-e1c38fd6395e/raw_model.obj"
+  }
+}

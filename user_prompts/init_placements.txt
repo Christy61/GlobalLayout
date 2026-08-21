@@ -1,0 +1,34 @@
+You are given:
+- layout criteria: {layout_criteria}
+- ImageA: floor plan with door, windows and existing assets (includes: 1. A door marked in green and windows marked in blue. 2. dark blue fill indicate existing objects)
+- focused area: {area}
+- Asset image: asset's 'phy' is 0.0, facing +x axis
+
+Your task:
+1. Confirm the spatial relationships between objects within the area. 
+2. Identify the empty spaces within the focused area.
+3. For each obj[i], define two fields:
+   - obj[i]['pos'] = [x, y, z] (meters)
+   - obj[i]['phy'] = [rotation_z] (rotation around z-axis in radians)
+
+Rules:
+1. MUST specify the placement for all the assets to be placed in focused area.
+2. Do not hallucinate assets, just use `obj[i]` to access asset in obj list.
+3. Please ensure the correctness of the program. When using torch operations, the input must be a tensor.
+4. Consider bounding boxes('bbox') to ensure objects do not overlap.
+5. Please refer to asset image, which is facing +x(means 'phy'=0.0).
+6. Look floor plan image in detail, when define position, MUST not overlap with the position of an existing object!
+
+Enclose your answer in ```python ... ``` tags as follow.
+```python
+# all wall in the scene, use wall[i] to access the i-th wall
+wall = {wall}
+# new assets need to be placed in the scene, use obj[i] to access the i-th asset
+obj = {obj}
+# DO NOT define wall or obj again, just use them!
+
+# You output:
+import torch
+obj[0]['pos'] = [<x>, <y>, 0.0]
+obj[0]['phy'] = [<angle> * torch.pi / 180]
+```

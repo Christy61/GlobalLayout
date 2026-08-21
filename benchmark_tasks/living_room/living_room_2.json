@@ -1,0 +1,57 @@
+{
+  "task_description": "A minimalist living room with the following layout specifications: small sofa against one wall, a coffee table in front of the sofa, and a single chair in one corner. Room size: 4m x 4m",
+  "layout_criteria": "The layout criteria should follow the task description and be minimalist, with a small sofa against one wall, a coffee table in front of the sofa, and a single chair in one corner to maximize the space in the 4m x 4m room.",
+  "boundary": {
+    "floor_vertices": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        0
+      ],
+      [
+        4,
+        4,
+        0
+      ],
+      [
+        0,
+        4,
+        0
+      ]
+    ],
+    "wall_height": 1.0650670488535852
+  },
+  "assets_cate": {
+    "accent_chair": {
+      "count": 1
+    },
+    "coffee_table": {
+      "count": 1
+    },
+    "shoe_bench": {
+      "count": 1
+    },
+    "side_table": {
+      "count": 1
+    },
+    "small_sofa": {
+      "count": 1
+    },
+    "umbrella_stand": {
+      "count": 1
+    }
+  },
+  "selected_floor_assets": {
+    "small_sofa": "./3D-FUTURE-model/89190118-3e68-4f86-a6f4-10ad85be929c/raw_model.obj",
+    "coffee_table": "./3D-FUTURE-model/588bb6c1-22e2-4ba8-b6a1-456fbe823be2/raw_model.obj",
+    "accent_chair": "./3D-FUTURE-model/cc35c88e-ab38-477a-bce6-32e7d4c838a8/raw_model.obj",
+    "side_table": "./3D-FUTURE-model/267d64bb-aa19-48c9-918e-e88b8dc8d2d5/raw_model.obj",
+    "umbrella_stand": "./3D-FUTURE-model/6fa9f289-ed6f-48d1-a042-68e37b45af66/raw_model.obj",
+    "shoe_bench": "./3D-FUTURE-model/4f1f7ab6-7bb7-46a1-8bf9-938cfff5e38e/raw_model.obj"
+  }
+}

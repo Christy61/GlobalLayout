@@ -1,0 +1,57 @@
+{
+  "task_description": "An inviting dining room with a table and six chairs; 5m x 6m",
+  "layout_criteria": "Welcoming and elegant ambiance; two chairs should be at the head of the table, and four chairs on the sides",
+  "boundary": {
+    "floor_vertices": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        0,
+        0
+      ],
+      [
+        5,
+        5,
+        0
+      ],
+      [
+        0,
+        5,
+        0
+      ]
+    ],
+    "wall_height": 2.490651819101054
+  },
+  "assets_cate": {
+    "dining_chair": {
+      "count": 6
+    },
+    "dining_table": {
+      "count": 1
+    },
+    "floor_vase": {
+      "count": 1
+    },
+    "narrow_bench": {
+      "count": 1
+    },
+    "sideboard": {
+      "count": 1
+    },
+    "umbrella_stand": {
+      "count": 1
+    }
+  },
+  "selected_floor_assets": {
+    "dining_table": "./3D-FUTURE-model/2046863b-b103-395e-bc9b-91cf5ad009c9/raw_model.obj",
+    "dining_chair": "./3D-FUTURE-model/8ce53b55-e134-4a6a-950c-99ac6e14e6bc/raw_model.obj",
+    "umbrella_stand": "./3D-FUTURE-model/c38f4ae4-f2d8-4ad4-b722-f6df0efc9a8c/raw_model.obj",
+    "narrow_bench": "./3D-FUTURE-model/88787ffe-dfbd-4c22-abb8-654d03b90626/raw_model.obj",
+    "sideboard": "./3D-FUTURE-model/5225ced7-7ee3-4b5f-98fe-127a94e9a2d4/raw_model.obj",
+    "floor_vase": "./3D-FUTURE-model/89e263e1-4fdb-4a22-b7ad-9734b740e6e8/raw_model.obj"
+  }
+}

@@ -1,0 +1,31 @@
+You are given:
+- room description: {room_description}
+- layout criteria: {layout_criteria}
+- focused area description: {area}
+- current graph: {current_code}
+- walls: {wall}
+- wall-mounted assets in this area: {obj}
+- ImageA / additional renderings: provided if available
+
+Your task: propose spatial constraints for ONLY the wall-mounted assets.
+Use BOTH ImageA and the render image (if provided) to keep correct semantic/physical relations with existing objects and to avoid collisions.
+
+Available constraints (STRICT):
+* both position & orientation: against
+Note:
+- `against(src, "north_wall", height)` positions the object on the wall in x-y, aligns it to the wall, and sets its z height.
+
+Rules:
+- Do NOT repeat existing constraints from current_code.
+- Refer to assets by bare keys (e.g. `wall_mirror_0`).
+- Refer to walls by quoted key strings (e.g. `"north_wall"`, `"west_wall"`).
+- ONLY use:
+  - against(wall_mirror_0, "north_wall", 1.2)
+- Do NOT use distance/place_align/align_with/point_towards/surround for wall constraints.
+- Every wall-mounted object must have at least one `against(...)` constraint (with an explicit height).
+- Use floating point numbers (e.g., 0.0, 1.2).
+
+Your response must be in following format in ```DSL ... ``` tags, don't output wall/obj/current_code again:
+```DSL
+against(wall_mirror_0, "north_wall", 1.2)
+```

@@ -1,0 +1,44 @@
+You are given (open-surface regions only; shelf/cubby regions with clearance < 1.0 are excluded):
+1. obj_list: matched small assets on open surfaces (standing books excluded).
+   - Only regions with `clearance == 1.0` appear in `obj_list`.
+   - `obj_list[j][<key>]`: asset in region j (e.g. `plate_0`, `cup_1`).
+
+2. open_region (in the message below): semantic metadata for those same open regions only.
+   - `open_region[i]['item']`: label → `count`, `z-axis`, `center`
+   - `open_region[i]['description']`: natural-language intent for this surface
+
+3. region (in generated code): use `region[i]` when a constraint needs a region argument (i is str).
+
+4. global render image: floor-standing furniture layout for adjacency / edge reasoning.
+
+Your task: for each open region, output `solver.add_constraint(...)` code using APIs defined in the system prompt.
+
+```python
+obj_list = {obj}
+```
+
+Dos and don'ts:
+* DO NOT add constraints for standing books.
+* One JSON entry per open region; `id` must match `open_region` region id.
+* Use only assets in `obj_list` for that region: `obj_list[j][<key>]`.
+* Prioritize semantics from `open_region[i]['description']` and the render image.
+* Use `against_edge` / `point_to_edge` to tie objects to parent-surface edges.
+* Use `place_align_small` for left-right relationships to reduce depth clipping.
+* Only constrain open top surfaces (no shelf/obstruction above).
+* Fixed anchor: `{{'pos':[x, y, z], 'description':'fixed point'}}` as second arg to `near`.
+* If a region has no objects, set `"code": null`.
+* Start code with `solver = ConstraintSolver()` then `solver.add_constraint(...)` lines only.
+* Do not define too many constraints; prefer a small, easy-to-converge set.
+
+Output JSON (enclose in ```json ... ```):
+```json
+{{
+  "constraints": [
+    {{
+      "id": 0,
+      "code": "solver = ConstraintSolver()\\nsolver.add_constraint(...)\\n...",
+      "reasons": "Why these constraints match the region description and layout."
+    }}
+  ]
+}}
+```

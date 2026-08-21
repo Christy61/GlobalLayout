@@ -1,0 +1,58 @@
+You are given:
+1. Room_description: {room_description}
+1. Groups of assets in the scene: {groups}
+2. Center assets of each group: {center_assets}
+
+Your task is to generate **only the necessary constraints between the center assets of each group**, to make the scene layout orderly. 
+- Use `obj[i]` to refer to assets; do not add new assets.
+- Make sure the constraints are valid given the initial positions of the objects.
+- Multiple constraints cannot be defined between two objects.
+
+Here are the base class definitions:
+```python
+class ConstraintSolver:
+    def __init__(self):
+        self.constraints = []
+
+    def add_constraint(self, constraint, *args):
+        self.constraints.append((constraint, args))
+
+    def place_relative_group(self, asset1, asset2, direction):
+        \"\"\"
+        Enforce a directional spatial relationship between two assets' center. The direction here is the direction in the top view.
+        Args:
+            asset1: The first asset in `place_relative`, which is in the `direction` of asset2. 
+            asset2: The second asset in the `place_relative`, must have 'phy' in the asset2.
+            direction ∈ ["up", "down", "left", "right"]. Orientation definition based on the **global coordinate** system in top-view
+        Note: If you choose 'left', asset1 will be left of asset2 in top-view, which means asset1 has a smaller x-value. 
+        **Use this constraint to ensure that the centres of the primary objects are aligned.** (e.g.: Between each tables in a restaurant)
+        \"\"\"
+
+    def point_towards_group(self, asset1, asset2):
+        \"\"\"
+        Add a constraint that asset1's front should point towards asset2.
+        Args:
+            asset1: The asset that should point towards asset2.
+            asset2: The asset that asset1 should point towards.
+        Note: The order is that asset1 will face asset2.
+        Use this constraint if the central object has a semantically necessary pointing relationship.
+        \"\"\"
+```
+For the center of group need to align, just choose one most important constraint from [place_relative_group, point_towards_group].
+
+Do's and don'ts:
+- Only use the provided obj[i] references; do not create new assets; don't output obj again.  
+- Specify constraints based on initial positions
+- Ensure sufficient space exists for the objects, otherwise, do not define constraints.
+- **Do not generate constraints for groups that do not require alignment and objects lacking relevance**
+- If not any constraints, you can omit `add_constraint`.
+
+Your response must be in following format in ```python ... ``` tags, don't output the given program again:
+```python
+# new assets need to be placed in the scene, use obj[i] to access the i-th asset
+obj = {obj}
+
+# output the constraints use the obj:
+solver = ConstraintSolver()
+solver.add_constraint(solver.<constraint_function>, <*args...>)
+```

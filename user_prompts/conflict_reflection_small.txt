@@ -1,0 +1,106 @@
+You are given:
+- Current constraints (small objects): {current_code}
+- Region bounds (local coordinates): {region_bounds}
+- region info with description: {region_info}
+- obj_list (per region): {obj_list}
+- Refinement log from the last iteration:\n {log_text}
+- Image A: Sideview segmentation diagram. note the placement of objects at corresponding region indices
+- Image B: Top-down view segmentation diagram.
+
+You are fixing small-object constraints on open surfaces.
+
+Constraint Type:
+* position-based: distance, place_align, place_align_small, against_edge, center
+* orientation-based: align_with, point_towards, point_to_edge
+* both position & orientation-based: against, next_to, surround
+
+Process (do not output):
+
+1. **What appears in `log_text` (GPT-visible errors)**
+
+   **[LogicError]** — conflicting edge already auto-removed; do NOT re-add unchanged:
+   - `Direction cycle detected` — place_align / place_align_small cycle
+   - `distance(A,B)=..., but path=...` — inconsistent distance chain
+   - `Deplicate_rot_constraints` — keep higher-priority rot constraint (`against_edge` > `align_with` > `point_towards` on small surfaces)
+   - `multi_edge_conflict` — multiple `against_edge` on different edges; keep one edge side
+   - `direction_conflict: remove place_align` — incoming place_align clashes with outgoing against_edge direction
+   - `aggregate_cross_edge_conflict` — too many large objects are anchored to both front/back and left/right edges of the same region; the shorter-edge-pair `against_edge` constraints were removed first. Repair by changing each removed object to `against_edge` on the other parallel edge pair only; do not add extra spacing constraints for this error.
+   - `aggregate_wall_conflict` — rare on open surfaces; wall overcrowding
+
+   **[SemanticCommon]** — add missing semantic relations between objects on the same surface.
+
+   **[ConstraintCompleteness]** — node missing position-type and/or orientation-type outgoing constraint, or a plate/tableware object missing `against_edge`; add the missing category only.
+
+   **[SemanticCheckError]** — semantic rule check failed; fix the underlying relation if clear from context.
+
+2. **Detect-only fixes (NOT in `log_text`; do not try to “repair” these in DSL output)**
+
+   These run in BFS center/OA pass after graph detect. They are already applied before you see the log.
+
+   **Center rules:**
+   - At most **one** `center(asset, region)` per region; duplicate center edges are removed.
+   - If the same asset has both `against_edge` and `center` to the same region, **`center` is removed** (against_edge wins).
+   - Do not assign `center` to more than one asset per region in new constraints.
+
+   **OA (open-surface area check):**
+   - Total bbox area on a region must fit within **85%** of region area.
+   - Excess assets are **dropped from the region** automatically (not logged).
+   - If many assets were removed, prefer fewer/smaller placements in new constraints rather than re-adding dropped objects.
+
+3. **Repair strategy**
+   - Add only minimal NEW constraints.
+   - If `place_align` / `place_align_small` conflicts, fix direction or switch to `distance`.
+   - If two `against_edge` on the same edge conflict with `place_align`, prefer `distance`.
+   - If `aggregate_cross_edge_conflict` appears, do NOT re-add the removed `against_edge` on the shorter edge pair. Add only replacement `against_edge` constraints on the other parallel edge pair; do not add `distance`, `near`, `place_align_small`, or other constraints for this error.
+
+Important:
+- ONLY use `obj_list['<region_id>']` and `region['<region_id>']` objects.
+- Use region bounds as local coordinates. Do NOT use room walls.
+- Output DSL only (no JSON).
+
+Your response must be in ```DSL ... ``` tags:
+```DSL
+<new_constraints_only>
+```
+
+Examples:
+
+Example 1: against_edge + place_align contradiction
+Log:
+[LogicError] multi_edge_conflict: plate_2 -> region_0, remove against_edge
+[LogicError] direction_conflict: remove place_align: plate_2-plate_4:["left"]
+Output:
+```DSL
+against_edge(plate_2, region_0, "left")
+against_edge(plate_4, region_0, "right")
+distance(plate_2, plate_4, 0.2, 0.5)
+```
+
+Example 2: ConstraintCompleteness (missing orientation)
+Log: [ConstraintCompleteness] plate_0: missing orientation-type outgoing constraint
+Output:
+```DSL
+point_to_edge(plate_0, region_0, "front")
+```
+
+Example 2b: tableware needs edge anchoring
+Log: [ConstraintCompleteness] dining_place_setting_set_0: missing against_edge constraint for plate/tableware
+Output:
+```DSL
+against_edge(dining_place_setting_set_0, region_0, "front")
+```
+
+Example 3: center vs against_edge (silent detect — log may be empty for this)
+Do NOT output `center(plate_0, region_0)` if `against_edge(plate_0, region_0, "left")` already anchors placement.
+
+Example 4: cross-edge overcrowding
+Log:
+[LogicError] aggregate_cross_edge_conflict: region_0 front/back=1.28, left/right=0.92; remove against_edge on shorter edge pair (left/right): dining_place_setting_set_2
+[LogicError] aggregate_cross_edge_conflict: region_0 front/back=1.28, left/right=0.92; remove against_edge on shorter edge pair (left/right): dining_place_setting_set_3
+Bad repair: re-adding `against_edge(..., "left")` or `against_edge(..., "right")`.
+Bad repair: adding `distance`, `near`, `place_align_small`, or other extra constraints.
+Good repair: move the removed objects to the other two non-perpendicular edges, usually the front/back pair, using only `against_edge`:
+```DSL
+against_edge(dining_place_setting_set_2, region_0, "front")
+against_edge(dining_place_setting_set_3, region_0, "back")
+```

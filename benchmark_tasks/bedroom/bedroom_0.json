@@ -1,0 +1,65 @@
+{
+  "task_description": "a beach-inspired bedroom with light paint, a rattan chair and a queen bed, 4m x 5m",
+  "layout_criteria": "airy, open, and serene with a focus on natural light and maximizing the feeling of space.\n",
+  "boundary": {
+    "floor_vertices": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        0
+      ],
+      [
+        4,
+        5,
+        0
+      ],
+      [
+        0,
+        5,
+        0
+      ]
+    ],
+    "wall_height": 1.8687612077960416
+  },
+  "assets_cate": {
+    "bench": {
+      "count": 1
+    },
+    "dresser": {
+      "count": 1
+    },
+    "nightstand": {
+      "count": 2
+    },
+    "queen_bed": {
+      "count": 1
+    },
+    "rattan_chair": {
+      "count": 1
+    },
+    "shoe_rack": {
+      "count": 1
+    },
+    "small_side_table": {
+      "count": 1
+    },
+    "wardrobe": {
+      "count": 1
+    }
+  },
+  "selected_floor_assets": {
+    "queen_bed": "./3D-FUTURE-model/410561db-f2a3-4092-992e-9b1e8154d01b/raw_model.obj",
+    "nightstand": "./3D-FUTURE-model/5b435fd9-7126-4647-808e-679b527b34f8/raw_model.obj",
+    "rattan_chair": "./3D-FUTURE-model/5149c843-f441-4589-a67f-e6ac7caf021e/raw_model.obj",
+    "small_side_table": "./3D-FUTURE-model/02bb6c69-603c-4d60-ab2d-1c4f129acca2/raw_model.obj",
+    "wardrobe": "./3D-FUTURE-model/cfdb88dc-ffcb-427a-b141-ba465d1700e6/raw_model.obj",
+    "dresser": "./3D-FUTURE-model/25b62afd-aed1-3633-a457-a65e37a3d6ce/raw_model.obj",
+    "shoe_rack": "./3D-FUTURE-model/7bb1a5a7-32a5-4238-aa64-c5e972e14701/raw_model.obj",
+    "bench": "./3D-FUTURE-model/ae59d818-7fea-48aa-becd-2e74aa348c26/raw_model.obj"
+  }
+}

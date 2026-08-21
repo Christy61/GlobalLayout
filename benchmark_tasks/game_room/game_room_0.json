@@ -1,0 +1,65 @@
+{
+  "task_description": "A spacious game room with a ping pong table and foosball setup; 7m x 8m",
+  "layout_criteria": "Active and social layout; position the ping pong table centrally with the foosball table parallel to it, creating distinct play zones with clear pathways between",
+  "boundary": {
+    "floor_vertices": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        0,
+        0
+      ],
+      [
+        7,
+        8,
+        0
+      ],
+      [
+        0,
+        8,
+        0
+      ]
+    ],
+    "wall_height": 1.4225583257318812
+  },
+  "assets_cate": {
+    "coffee_table": {
+      "count": 1
+    },
+    "foosball_table": {
+      "count": 1
+    },
+    "ping_pong_table": {
+      "count": 1
+    },
+    "side_bench": {
+      "count": 1
+    },
+    "sofa": {
+      "count": 1
+    },
+    "sports_equipment_rack": {
+      "count": 1
+    },
+    "storage_bench": {
+      "count": 1
+    },
+    "storage_cabinet": {
+      "count": 1
+    }
+  },
+  "selected_floor_assets": {
+    "ping_pong_table": "./test_asset_dir/b36074d6923d4f658bc755c5fbef9f07/b36074d6923d4f658bc755c5fbef9f07.glb",
+    "sports_equipment_rack": "./3D-FUTURE-model/b74120f3-3e21-48cc-9035-3d33149fe002/raw_model.obj",
+    "foosball_table": "./3D-FUTURE-model/03802a6e-f815-4eb7-b494-3cc108ffbbfe/raw_model.obj",
+    "side_bench": "./3D-FUTURE-model/8f76d2f8-6b0d-462c-ac3a-2eb97dda23ac/raw_model.obj",
+    "sofa": "./3D-FUTURE-model/00fbb26f-13cf-4916-a8b0-f6241482abb4/raw_model.obj",
+    "coffee_table": "./3D-FUTURE-model/614265f8-7f8e-421e-a125-97c58b82e02a/raw_model.obj",
+    "storage_cabinet": "./3D-FUTURE-model/60237fa4-4e5e-446e-ab6c-2958b9b7e487/raw_model.obj",
+    "storage_bench": "./test_asset_dir/5159d7fbe240489285cfe91f51084cc7/5159d7fbe240489285cfe91f51084cc7.glb"
+  }
+}

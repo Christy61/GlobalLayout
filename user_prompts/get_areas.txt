@@ -1,0 +1,48 @@
+**Definition:**
+A semantic asset group is a collection of assets that are logically related to each other. The grouping of the assets are based on functional, semantic, geometric, and functional relationships between assets.
+Usually assets that are close to each other in space can be grouped together. For example, a bed, a nightstand, and a lamp on top of the nightstand can be grouped together.
+However, it's also possible to group assets that are not physically close to each other but are **semantically related**. For example, a sofa, a coffee table, a tv stand in front of the sofa, can be grouped together even though the tv stand is a few meters away from the sofa. They can be grouped together because they are semantically related.
+
+You are given:
+- Room type: {room_type}
+- layout criteria: {layout_criteria}
+- room description with room size: {room_description}
+- Floor image: floor plan visualization with 0.25m grid for measurements
+- Reference asset categories (floor objects only). Use as guidance: {categories}
+
+Your task:
+1. Start by considering the size of the room. Start by considering the size of the room. 
+   With respect to its size and description what are the possible objects that can be in the room. Be as thorough as possible
+2. Identify the semantic relationships between the assets. You should consider the functional, semantic, and geometric relationships between the assets.
+3. Order the areas based on their importance to the task description, starting with the most important area.  
+
+3D Convention:
+- The origin is at the lower left of the top view. In the top view, up is +y, right is +x.
+
+Additional rules:
+- When assigning areas, you must consider the positions of doors and windows (refer to Floor image). 
+- Ensure natural circulation (walking paths) and human interactions are not blocked. 
+- Areas must not overlap with each other. Each area should occupy a distinct non-overlapping region in 
+- Do not include empty areas. Add no less than 3 areas.
+- Ignore all small objects. Just contain floor objects.
+- Ensure there is sufficient space for each object to be placed.
+
+Output following JSON format in ```json ... ``` tags.
+```json
+{{
+  "room_analysis": "<brief visual/functional description of the room>",
+  "areas": [
+    {{
+      "area_name": "<name of the area>",
+      "description": "<purpose/intention of the area and objects in it>",
+      "key_relations_between_assets": [
+        "<approximate relative positions and semantic relationships between assets within this group>"
+      ],
+      "key_relations_with_other_groups": [
+        "<approximate semantic relationships with other groups>"
+      ],
+      "area_positions": "<The approximate location description of the area>"
+    }}
+  ]
+}}
+```

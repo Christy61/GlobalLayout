@@ -1,0 +1,57 @@
+{
+  "task_description": "A child-friendly classroom with colorful mats and small tables; 6m x 8m",
+  "layout_criteria": "Playful and flexible space; distribute colorful mats in a circular pattern with small tables interspersed, allowing for easy reconfiguration",
+  "boundary": {
+    "floor_vertices": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        0,
+        0
+      ],
+      [
+        8,
+        6,
+        0
+      ],
+      [
+        0,
+        6,
+        0
+      ]
+    ],
+    "wall_height": 1.5999948644582291
+  },
+  "assets_cate": {
+    "bean_bag_chair": {
+      "count": 3
+    },
+    "child_stool": {
+      "count": 12
+    },
+    "low_storage_shelf": {
+      "count": 2
+    },
+    "mobile_storage_cart": {
+      "count": 1
+    },
+    "small_bookshelf": {
+      "count": 1
+    },
+    "small_round_table": {
+      "count": 4
+    }
+  },
+  "selected_floor_assets": {
+    "small_round_table": "./3D-FUTURE-model/ea2ac5b8-2175-4fd2-bf15-98065d926f96/raw_model.obj",
+    "child_stool": "./3D-FUTURE-model/5e88e02b-1f13-45c1-b927-f32d204c9fa5/raw_model.obj",
+    "low_storage_shelf": "./3D-FUTURE-model/273c915c-59f4-4496-b46a-a6c2558c9cd4/raw_model.obj",
+    "mobile_storage_cart": "./3D-FUTURE-model/9ae4c318-f11f-493f-9765-0b75181e8bb7/raw_model.obj",
+    "bean_bag_chair": "./3D-FUTURE-model/40fcee9e-520a-4f6d-b8f5-044f5123cc9d/raw_model.obj",
+    "small_bookshelf": "./3D-FUTURE-model/7bb1a5a7-32a5-4238-aa64-c5e972e14701/raw_model.obj"
+  }
+}

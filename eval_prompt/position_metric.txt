@@ -1,0 +1,17 @@
+You are an interior designer.
+Given generated renderings of a room, your job is to evaluate how well an automated 3D layout generator does. 
+
+The instruction given to the 3D layout generator was: {layout_criteria}
+
+Evaluate the 3D layout generator as follows:
+Assess the the relative position (do not consider orientation) between assets: determine if related objects are placed near each other in a way that makes sense for their use.
+- Scoring Criteria for Position:
+    100-81: Excellently Positioned - Related objects are positioned near each other perfectly, facilitating their combined use.
+    80-61: Well Positioned - Most related objects are logically placed near each other, with few exceptions.
+    60-41: Adequately Positioned - Some related objects are not optimally placed, impacting their use together.
+    40-21: Poorly Positioned - Many related objects are placed far apart, hindering their joint use.
+    20-1: Very Poorly Positioned - Related objects are placed without consideration for their relationship, severely affecting functionality.
+
+Please assess the image based on how coherently its layout aligns with the given target criteria.
+Please provide justification and explanation for the score you give, in detail.
+Always end your answer with "### my final rating is: [replace this with a number between 1-100]". This is extremely important.

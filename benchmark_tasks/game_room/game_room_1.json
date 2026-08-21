@@ -1,0 +1,61 @@
+{
+  "task_description": "A cozy game room with a chess table and book shelf; 4m x 5m",
+  "layout_criteria": "Intellectual and relaxing space; place the chess table near a wall, and the bookshelf along the opposite wall to balance the room",
+  "boundary": {
+    "floor_vertices": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        0
+      ],
+      [
+        4,
+        5,
+        0
+      ],
+      [
+        0,
+        5,
+        0
+      ]
+    ],
+    "wall_height": 1.31239573145213
+  },
+  "assets_cate": {
+    "armchair": {
+      "count": 2
+    },
+    "bookshelf": {
+      "count": 1
+    },
+    "chess_table": {
+      "count": 1
+    },
+    "reading_chair": {
+      "count": 1
+    },
+    "shoe_bench": {
+      "count": 1
+    },
+    "side_table": {
+      "count": 2
+    },
+    "umbrella_stand": {
+      "count": 1
+    }
+  },
+  "selected_floor_assets": {
+    "chess_table": "./test_asset_dir/aa286e5455f54e39affa9448ffbad6bd/aa286e5455f54e39affa9448ffbad6bd.glb",
+    "armchair": "./3D-FUTURE-model/e0aadec1-12e3-484b-8f81-d3cefef4e2c2/raw_model.obj",
+    "side_table": "./3D-FUTURE-model/6de64919-5417-4897-b181-6de6eda0f98a/raw_model.obj",
+    "bookshelf": "./3D-FUTURE-model/5f33f795-925b-4967-bab6-5f205b88574d/raw_model.obj",
+    "reading_chair": "./3D-FUTURE-model/24624dae-698b-4c70-957c-a67531aac5e4/raw_model.obj",
+    "umbrella_stand": "./3D-FUTURE-model/c38f4ae4-f2d8-4ad4-b722-f6df0efc9a8c/raw_model.obj",
+    "shoe_bench": "./3D-FUTURE-model/4f1f7ab6-7bb7-46a1-8bf9-938cfff5e38e/raw_model.obj"
+  }
+}

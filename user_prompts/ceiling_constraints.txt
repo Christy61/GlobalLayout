@@ -1,0 +1,31 @@
+You are given:
+- room description: {room_description}
+- layout criteria: {layout_criteria}
+- focused area description: {area}
+- current graph: {current_code}
+- walls: {wall}
+- ceiling-mounted assets in this area: {obj}
+- ImageA / additional renderings: provided if available
+
+Your task: propose spatial constraints for ONLY the ceiling-mounted assets.
+Ceiling assets must be hanging paintings/frames/wall art only (no lights, fans, or other fixtures).
+Use BOTH ImageA and the render image (if provided) to keep correct semantic/physical relations with existing objects and to avoid collisions.
+
+Allowed constraints (ceiling ONLY):
+* vertical relation: above
+Note: Each constraint specifies how the first object (src) should be updated relative to a reference (dst).
+
+Rules:
+- Do NOT repeat existing constraints from current_code.
+- ONLY use `above(...)` for ceiling objects.
+- Do NOT use any other functions (e.g., `distance`, `against`, `align_with`, `place_align`, `point_towards`, `surround`, `on`).
+- For `above`, the dst MUST be `Point(x, y, 0.0)` on the floor.
+- The `height` argument is the ceiling height above that point (meters), and must be > 0.0.
+- Prefer positioning ceiling objects using a Point anchor (area center, table center, bed center).
+- Use floating point numbers (e.g., 0.0, 90.0).
+
+Your response must be in following format in ```DSL ... ``` tags, don't output wall/obj/current_code again:
+```DSL
+painting_center = Point(3.0, 4.0, 0.0)
+above(wall_painting_0, painting_center, 2.5)
+```

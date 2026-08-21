@@ -1,0 +1,15 @@
+ftfy 
+regex 
+tqdm
+shapely
+openai
+deap
+faiss-cpu
+bitsandbytes
+git+https://github.com/openai/CLIP.git
+trimesh==4.3.2
+transformers==4.57.0
+accelerate==1.12.0
+libigl==2.5.1
+mapbox_earcut
+loguru

@@ -1,0 +1,57 @@
+{
+  "task_description": "A small bookstore with multiple bookshelves; 5m x 7m",
+  "layout_criteria": "Compact yet browsable arrangement; align bookshelves along walls",
+  "boundary": {
+    "floor_vertices": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        0,
+        0
+      ],
+      [
+        5,
+        7,
+        0
+      ],
+      [
+        0,
+        7,
+        0
+      ]
+    ],
+    "wall_height": 1.9773477606148286
+  },
+  "assets_cate": {
+    "bookshelf": {
+      "count": 4
+    },
+    "coffeetable": {
+      "count": 1
+    },
+    "counter": {
+      "count": 1
+    },
+    "floor_lamp": {
+      "count": 2
+    },
+    "potted_plant": {
+      "count": 4
+    },
+    "reading_chair": {
+      "count": 2
+    }
+  },
+  "selected_floor_assets": {
+    "bookshelf": "./3D-FUTURE-model/df18ac99-a364-42a7-b66f-427d4fed2ef5/raw_model.obj",
+    "potted_plant": "./3D-FUTURE-model/850e13d2-8cd3-49bf-8a65-d183f83e0eba/raw_model.obj",
+    "reading_chair": "./3D-FUTURE-model/badee8ce-ba11-484c-91df-c3b10a27619f/raw_model.obj",
+    "coffeetable": "./3D-FUTURE-model/3bfeed24-ef65-45ec-b93f-3d1815947b02/raw_model.obj",
+    "floor_lamp": "./test_asset_dir/4b4bd3bb86f748a6b72bffffd31a398b/4b4bd3bb86f748a6b72bffffd31a398b.glb",
+    "counter": "./3D-FUTURE-model/432c231c-52c4-4f1d-9210-d066d87560e5/raw_model.obj"
+  }
+}

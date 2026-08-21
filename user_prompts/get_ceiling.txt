@@ -1,0 +1,39 @@
+You are given:
+- Room type: {room_type}
+- Layout criteria: {layout_criteria}
+- Room description with room size: {room_description}
+- Focused area description: {area}
+- Walls in the room: {wall}
+- Existing assets in this area: {obj}
+- Render image: optimized scene (includes existing assets and walls)
+
+Your task:
+1. Propose ceiling-mounted or hanging objects to add AFTER layout optimization.
+2. Ceiling objects must be hanging paintings/frames/wall art only (no lights, fans, or other fixtures).
+3. Do NOT include floor-standing furniture, wall lamps, or tabletop items.
+4. Use the render image and area purpose to choose the size, count, and placement. Ceiling objects should align with key activity zones (e.g., above dining tables, seating centers, beds) and avoid blocking doors or windows.
+
+Rules:
+- Use the same output schema as get_objects, but only list ceiling objects in `objects`.
+- Each entry must include: name, description (include the word "painting", "picture", or "frame"), dimensions [length, width, height] in meters, and amount.
+- If no ceiling object is needed for an area, return an empty `objects` list for that area.
+
+Output following JSON format in ```json ... ``` tags.
+```json
+{
+  "areas": [
+    {
+      "area_name": "<name of the area from the Areas description>",
+      "objects": [
+        {
+          "name": "hanging_painting",
+          "description": "a framed abstract painting, minimal style",
+          "dimensions": [length, width, height],
+          "amount": 1
+        }
+      ],
+      "asset_sets": []
+    }
+  ]
+}
+```

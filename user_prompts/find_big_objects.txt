@@ -1,0 +1,29 @@
+### You are given:
+1. objects_in_areas: describes the layout of a room. The room is divided into several functional areas.
+Each area contains a list of large furniture items (called "assets") and a rectangular boundary (called "bounds"). All listed assets are placed on the floor.
+2. Room description: {room_description}
+3. Global render image: Based on the overall layout of the room, determine what items should be placed on that object. For example, the TV cabinet facing the sofa should have a TV placed on it.
+
+### Your task is as follows:
+1. From all the listed assets, select those large pieces of furniture suitable for displaying objects on their surfaces.
+   Generally only: tables, bookshelves, TV_stand, cabinet, etc. Do not include other items that do not have storage functionality.
+2. Ignore purely decorative items, surfaces lacking horizontal planes, or small objects. (e.g., floor lamps, reading lamps, chairs, speakers...).
+3. For each selected object, write a short, natural-language description that explains what small items can be placed on it, or how it might typically be used in interior design.
+   The primary consideration here should be its intended use; for example: "a buffet counter should be equipped with plates and cups for placing food."
+
+### Output following JSON format in ```json ... ``` tags.
+```json
+{{
+    "list": [
+        {{
+            "object": <object_name>, # should be same as 'name' in objects_in_areas
+            "description": "description of this object..."
+        }},
+        ...
+    ]
+}}
+```
+
+### Rules:
+1. DO NOT contain asset not in objects_in_areas.
+2. Do not place excessive objects on open surfaces. **Ensure there is sufficient space for each object to be placed.**

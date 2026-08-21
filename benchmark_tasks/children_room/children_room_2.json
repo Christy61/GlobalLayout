@@ -1,0 +1,66 @@
+{
+  "task_description": "An educational children's room with a single bed; 4m x 5m",
+  "layout_criteria": "Stimulating yet organized space; the study desk placed perpendicular to the bed",
+  "boundary": {
+    "floor_vertices": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        0
+      ],
+      [
+        4,
+        5,
+        0
+      ],
+      [
+        0,
+        5,
+        0
+      ]
+    ],
+    "wall_height": 1.9288652801067665
+  },
+  "assets_cate": {
+    "activity_table": {
+      "count": 1
+    },
+    "bedside_table": {
+      "count": 1
+    },
+    "bookshelf": {
+      "count": 1
+    },
+    "desk_chair": {
+      "count": 1
+    },
+    "single_bed": {
+      "count": 1
+    },
+    "study_desk": {
+      "count": 1
+    },
+    "toy_storage_bin": {
+      "count": 2
+    },
+    "wardrobe": {
+      "count": 1
+    }
+  },
+  "selected_floor_assets": {
+    "single_bed": "./3D-FUTURE-model/af77652f-1b02-4e05-838e-9ed688b57fa0/raw_model.obj",
+    "bedside_table": "./3D-FUTURE-model/36a4de8e-bdc1-410d-99d3-5acb5dacc5eb/raw_model.obj",
+    "study_desk": "./3D-FUTURE-model/caf96e86-bd6d-4cf7-a51f-38f1970a04c9/raw_model.obj",
+    "desk_chair": "./3D-FUTURE-model/30f9f86f-6f58-4cf4-b2b0-8486b17d15ba/raw_model.obj",
+    "wardrobe": "./3D-FUTURE-model/9db096ff-3c3d-4733-9c3b-7213aa54bd4c/raw_model.obj",
+    "bookshelf": "./3D-FUTURE-model/e5ab1b56-d7d9-49e3-b087-b77c99f278e3/raw_model.obj",
+    "toy_storage_bin": "./3D-FUTURE-model/9ae4c318-f11f-493f-9765-0b75181e8bb7/raw_model.obj",
+    "activity_table": "./test_asset_dir/0c835523d6b34fd29112fa388cc55661/0c835523d6b34fd29112fa388cc55661.glb",
+    "play_stool": "./3D-FUTURE-model/5e88e02b-1f13-45c1-b927-f32d204c9fa5/raw_model.obj"
+  }
+}

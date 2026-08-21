@@ -1,0 +1,78 @@
+You are given:
+- Image A: Frontview segmentation diagram that divides the furniture into clearly labeled regions (with indices like 0, 1, 2, ..., N).
+- Image B: Sideview segmentation diagram.
+- discription: {description}
+- Rendering image: Based on the overall layout of the room, determine what items should be placed on that object. For example, the TV cabinet facing the sofa should have a TV placed on it.
+
+Your task:
+Your goal is to assign suitable objects to each region of the big furniture, ensuring the result aligns with practical usage, aesthetics, and the overall function of the furniture.
+
+You must reason step by step as follows:
+## Step 1: Global Function Identification
+Follow discription to determine the overall type and function of the furniture (e.g., is it a TV stand, display shelf, kitchen storage unit, wardrobe, etc.?).
+Briefly infer what purpose the entire structure serves in an indoor space.
+
+## Step 2: Region Analysis
+Observe **Image A and B**. For each labeled region:
+- Determine whether it is open or closed.
+- Consider symmetry, visibility, and accessibility.
+  - If the region is too small or not accessible (the bottom layer of sofa cushions, etc.), mark "if_placed" as false
+- Also check in Image A whether this region already contains an existing item.
+  - If it already has an item (e.g., a TV, vase, books, etc.), mark "if_placed" as false
+
+## Step 3: Asset Placement Decision
+For each region:
+- Based on the discription, determine the items for each region. Ensure the items are small and can be placed on the surface.
+- If the region's "if_placed" is false in Step 2, leave `item` as empty dict and do not assign any new objects!
+- Assign 0 or more suitable items that match the functional role, aesthetic expectations, and typical household usage.
+  Also consider the rendering image for whole room type and the usage of this furniture (e.g, If there is one chair at each table, avoid placing multiple computers on the table.)
+- Only use concrete and specific item types. Do not use vague categories such as "decoration", "cleaning supplies", etc.
+- You must choose from a selection of household items commonly used in the real world, like **TV for media_console/tv_stand** (Also: "book", "potted plant", "photo frame", "TV", "plate", "cup", etc.)
+- If you choose "book", use a descriptive adjective to specify its placement: use "standing book" for vertical books, and "flat book" for flat books.
+   For other objects, please use short adjectives to ensure consistency in style (such as: gray striped pillow, small potted plant, ceramic vase, etc..).
+- For each item, include **four keys**:
+    1. "count": the number of items to be placed. Use "unlimited" only when the item is spread across the full region (e.g., a full bookshelf).
+    2. "z-axis": set to true if the item is intended to be stacked vertically. Otherwise, set to false. **for flat book, z-axis should be set to true.**
+    3. "center": specify the alignment of the item within the region in x-y plane. `"center": true` means the item is placed in the middle of the region, not biased to the left or right.
+    4. "dimensions": [length, width, height] in meters, please infer typical realistic dimensions for the big furniture type and item type.
+    Accurately estimate dimensions based on the region size, the number of objects to be placed and common sense in real world.
+- Do **not** set `"count"` to `"unlimited"` if `"z-axis"` is `true`, as each stacked item must be discrete and countable.
+Note: Standing books should be placed exclusively in bookshelves. MUST choose **flat book** for table and open horizontal surface.
+
+Dining/tableware grouping rule:
+- For dining tables, restaurant tables, buffet tables, cafe tables, trays, or any surface that needs repeated tableware, represent each complete tableware group as a single composite item instead of separate plate/cup/fork/knife/napkin objects.
+- Use item names like `"dining place setting set"`, `"buffet plate and cutlery set"`, `"tea cup and saucer set"`, or `"serving dish set"` as appropriate.
+- The `"count"` of the set should equal the number of seats, guests, or repeated serving positions. For example, a 4-seater dining table should use `"dining place setting set": {{"count": 4, ...}}` rather than separate `"plate": 4`, `"fork": 4`, `"knife": 4`, `"glass": 4`, `"napkin": 4`.
+- Shared central objects such as condiment holders, flower vases, menus, or serving bowls may still be listed separately if needed.
+- Estimate the composite set dimensions as the footprint of one complete place setting, not the dimensions of each individual utensil. Typical dining place setting footprint: about `[0.45, 0.35, 0.12]`.
+
+## Step 4: Utilization Estimation
+For each region:
+- Estimate the **x-y plane utilization rate**, i.e., the percentage of the surface area (width*depth) that the item(s) would cover.
+- This should be a float value between 0 and 1 (e.g., `0.75` means 75% of the area is used).
+- If the region is not used, set `xy_utilization` to `0.0`.
+
+Output following JSON format. Enclose your answer in ```json ... ``` tags:
+```json
+{{
+"regions": [
+    {{
+        "id": 0,
+        "item": {{
+            "<item-type>":
+                {{"count": <count>, "z-axis": <z-axis>, "center": <center>, "dimensions": [length, width, height]}}
+        }},
+        "description": "<why place these assets>",
+        "xy_utilization": <utilization in x-y plane>
+    }},
+    // ... continue for all region indices present in Image B
+    ]
+}}
+```
+
+Rules:
+- If no any region idx in Image A and B, please return "regions" as empty list.
+- If no items in one region, leave `item` as empty dict, and xy_utilization should be 0.0
+- Every region in image should be in the json output.
+- For the dining table, place only as many **place setting sets** as there are chairs around it.
+- **Do not place excessive objects on open surfaces！ Ensure there is sufficient space for each object to be placed.**

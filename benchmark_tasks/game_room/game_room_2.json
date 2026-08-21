@@ -1,0 +1,49 @@
+{
+  "task_description": "An inviting game room with a pool table and poker set; 6m x 7m",
+  "layout_criteria": "Versatile entertainment area; center the pool table in the room",
+  "boundary": {
+    "floor_vertices": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        0,
+        0
+      ],
+      [
+        6,
+        7,
+        0
+      ],
+      [
+        0,
+        7,
+        0
+      ]
+    ],
+    "wall_height": 2.7421194341945916
+  },
+  "assets_cate": {
+    "cue_rack_stand": {
+      "count": 1
+    },
+    "poker_chair": {
+      "count": 6
+    },
+    "poker_table": {
+      "count": 1
+    },
+    "pool_table": {
+      "count": 1
+    }
+  },
+  "selected_floor_assets": {
+    "pool_table": "./test_asset_dir/b36074d6923d4f658bc755c5fbef9f07/b36074d6923d4f658bc755c5fbef9f07.glb",
+    "cue_rack_stand": "./3D-FUTURE-model/4107dc5f-f56a-4e6b-a972-4b1fe8d6fe52/raw_model.obj",
+    "poker_table": "./test_asset_dir/b36074d6923d4f658bc755c5fbef9f07/b36074d6923d4f658bc755c5fbef9f07.glb",
+    "poker_chair": "./3D-FUTURE-model/63c55a89-8f69-3d71-ada8-80c5cfb01e6e/raw_model.obj"
+  }
+}

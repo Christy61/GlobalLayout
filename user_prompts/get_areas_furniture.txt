@@ -1,0 +1,41 @@
+You are given:
+- Image A: Front-view segmentation diagram that divides the furniture into clearly labeled regions (with indices like 0, 1, 2, ..., N).
+- Image B: Side-view segmentation diagram.
+- description: {description}
+- Rendering image: Based on the overall layout of the room, determine how each furniture is used and its intended function.
+
+Your task:
+1. Furniture-level Analysis
+   - Analyze the overall room and each piece of furniture.
+   - For each furniture, determine its type (e.g., TV stand, sofa, dining table, bookshelf) and overall function in the room.
+   - Summarize this in a concise description as "furniture_analysis".
+
+2. Region-level Analysis
+   - For each labeled region in the furniture segmentation (from Image A and B):
+     - Determine its functional purpose (e.g., display shelf, storage compartment, table surface).
+     - Consider accessibility, visibility, and whether it is open or closed.
+     - Note any regions that are too small, inaccessible, or already occupied by existing items; these regions should still be included but can have an empty description.
+   - Provide a brief description of what this region is intended for and its role in supporting the furniture's function.
+
+3D Convention:
+- The origin is at the lower left of the top view. In the top view, up is +y, right is +x.
+
+Output Format:
+- Use JSON format enclosed in ```json ... ``` tags.
+- Structure:
+
+```json
+{
+  "furniture_analysis": "<brief visual/functional description of the room and furniture>",
+  "regions": [
+    {
+      "region_idx": 0,
+      "description": "<purpose/intended use of the region and objects in it>"
+    },
+    {
+      "region_idx": 1,
+      "description": "<purpose/intended use of the region and objects in it>"
+    }
+    // ... continue for all region indices present in Image B
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "task_description": "A florist shop with a variety of flowers and a cozy seating area; 5m x 7m",
+  "layout_criteria": "Warm and welcoming atmosphere; the seating area should be opposite the checkout counter, with flowers displayed along the walls",
+  "boundary": {
+    "floor_vertices": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        0,
+        0
+      ],
+      [
+        5,
+        7,
+        0
+      ],
+      [
+        0,
+        7,
+        0
+      ]
+    ],
+    "wall_height": 1.9586725426059801
+  },
+  "assets_cate": {
+    "armchair": {
+      "count": 1
+    },
+    "checkout_counter": {
+      "count": 1
+    },
+    "coffee_table": {
+      "count": 1
+    },
+    "flower_bucket_stand": {
+      "count": 2
+    },
+    "flower_display_shelf": {
+      "count": 2
+    },
+    "flower_display_table": {
+      "count": 2
+    },
+    "impulse_display_stand": {
+      "count": 1
+    },
+    "small_sofa": {
+      "count": 1
+    }
+  },
+  "selected_floor_assets": {
+    "flower_display_shelf": "./3D-FUTURE-model/f8128145-3aa1-43f1-9482-52bc49b159fe/raw_model.obj",
+    "flower_display_table": "./test_asset_dir/26611bb4c54a4c08928146e61d07fed2/26611bb4c54a4c08928146e61d07fed2.glb",
+    "flower_bucket_stand": "./test_asset_dir/4d49691a269745cabe0e1d5c1c3bef9b/4d49691a269745cabe0e1d5c1c3bef9b.glb",
+    "checkout_counter": "./3D-FUTURE-model/c1a7aecd-a5a1-44a5-9d00-340f5b0d235e/raw_model.obj",
+    "impulse_display_stand": "./3D-FUTURE-model/e9dd0b6a-2760-4af0-b01e-47cf1b0dd16c/raw_model.obj",
+    "small_sofa": "./3D-FUTURE-model/9d57ed1c-ba2a-4ec3-a74b-495766e787fd/raw_model.obj",
+    "armchair": "./3D-FUTURE-model/badee8ce-ba11-484c-91df-c3b10a27619f/raw_model.obj",
+    "coffee_table": "./3D-FUTURE-model/3bfeed24-ef65-45ec-b93f-3d1815947b02/raw_model.obj"
+  }
+}

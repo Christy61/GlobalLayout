@@ -1,0 +1,65 @@
+{
+  "task_description": "A cozy living room with the following layout specifications: loveseat centered in the room, small coffee table in front of the loveseat, and a TV stand on one wall. Room size: 4m x 5m",
+  "layout_criteria": "The layout criteria should follow the task description and be cozy, symmetrical, and functional with a clear focal point around the loveseat and TV stand.",
+  "boundary": {
+    "floor_vertices": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        0
+      ],
+      [
+        4,
+        5,
+        0
+      ],
+      [
+        0,
+        5,
+        0
+      ]
+    ],
+    "wall_height": 2.5771140587948476
+  },
+  "assets_cate": {
+    "accent_chair": {
+      "count": 1
+    },
+    "coffee_table": {
+      "count": 1
+    },
+    "console_table": {
+      "count": 1
+    },
+    "floor_lamp": {
+      "count": 1
+    },
+    "loveseat": {
+      "count": 1
+    },
+    "side_table": {
+      "count": 1
+    },
+    "tv_stand": {
+      "count": 1
+    },
+    "umbrella_stand": {
+      "count": 1
+    }
+  },
+  "selected_floor_assets": {
+    "loveseat": "./3D-FUTURE-model/eca3ee5d-3a5a-48de-b348-6371618dd232/raw_model.obj",
+    "coffee_table": "./3D-FUTURE-model/0f409e36-6119-482d-a8f9-558bc5cadce5/raw_model.obj",
+    "tv_stand": "./3D-FUTURE-model/4cbdaa10-169b-441b-bab5-732300455dab/raw_model.obj",
+    "side_table": "./3D-FUTURE-model/af24ea63-908b-403d-9568-7c01a680635b/raw_model.obj",
+    "console_table": "./3D-FUTURE-model/210e365e-f949-4075-a7c4-4a7cc43178bc/raw_model.obj",
+    "umbrella_stand": "./3D-FUTURE-model/a6355af5-6c60-45bb-90ba-c0734e0ea278/raw_model.obj",
+    "floor_lamp": "./3D-FUTURE-model/93adf1b3-3560-4f2c-af05-d2355fd1e536/raw_model.obj",
+    "accent_chair": "./3D-FUTURE-model/3ef48664-ce00-4c66-8f3e-c39e139b9cd4/raw_model.obj"
+  }
+}

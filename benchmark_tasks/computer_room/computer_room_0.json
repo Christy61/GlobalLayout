@@ -1,0 +1,49 @@
+{
+  "task_description": "A computer room with a desks and speakers; 4m x 5m",
+  "layout_criteria": "Immersive gaming experience; chairs should be aligned with the front of each desk and speakers should be placed at the corners of the room",
+  "boundary": {
+    "floor_vertices": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        0
+      ],
+      [
+        4,
+        5,
+        0
+      ],
+      [
+        0,
+        5,
+        0
+      ]
+    ],
+    "wall_height": 2.4985581669040484
+  },
+  "assets_cate": {
+    "floor_speaker": {
+      "count": 4
+    },
+    "gaming_chair": {
+      "count": 3
+    },
+    "gaming_desk": {
+      "count": 3
+    },
+    "subwoofer": {
+      "count": 2
+    }
+  },
+  "selected_floor_assets": {
+    "gaming_desk": "./3D-FUTURE-model/aa05f047-56dd-4ba9-95ae-07a81909845c/raw_model.obj",
+    "gaming_chair": "./test_asset_dir/ccb3ada5917a4b90b689e1d1bf852dc2/ccb3ada5917a4b90b689e1d1bf852dc2.glb",
+    "floor_speaker": "./3D-FUTURE-model/c24dd624-4035-4533-8342-e98aa24d7a40/raw_model.obj",
+    "subwoofer": "./3D-FUTURE-model/07c12b12-11ec-4038-89e2-760308edcd1f/raw_model.obj"
+  }
+}
